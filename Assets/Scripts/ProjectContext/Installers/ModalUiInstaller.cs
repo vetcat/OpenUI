@@ -10,6 +10,7 @@ namespace ProjectContext.Installers
         public Canvas CanvasModalUi;
 
         public ModalInfoOkCancelView ModalInfoOkCancelView;
+        public ModalInfoOkView ModalInfoOk;
         public ModalWaitView ModalWaitView;
 
 
@@ -25,6 +26,8 @@ namespace ProjectContext.Installers
             Container.BindInterfacesAndSelfTo<ModalWindowController>().AsSingle().WithArguments(canvas)
                 .NonLazy();
             //bind modale window
+            Container.BindFactory<ModalInfoOkView, ModalInfoOkView.Factory>()
+                .FromComponentInNewPrefab(ModalInfoOk.gameObject);
             Container.BindFactory<ModalInfoOkCancelView, ModalInfoOkCancelView.Factory>()
                 .FromComponentInNewPrefab(ModalInfoOkCancelView.gameObject);
             Container.BindFactory<ModalWaitView, ModalWaitView.Factory>()

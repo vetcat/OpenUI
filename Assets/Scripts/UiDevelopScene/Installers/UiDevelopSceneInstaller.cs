@@ -30,6 +30,9 @@ namespace UiDevelopScene.Installers
                 .Subscribe(_ =>
                 {
                     _modalWindowController.ShowWait(false);
+                    //test stack modale window
+                    _modalWindowController.InfoOk("Caption_1", "Description_1 - stack test");
+                    _modalWindowController.InfoOk("Caption_2", "Description_2 - stack test");
                 });
         }
     }

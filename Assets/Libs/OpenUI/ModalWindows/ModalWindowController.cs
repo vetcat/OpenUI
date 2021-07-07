@@ -16,6 +16,7 @@ namespace Libs.OpenUI.ModalWindows
         private readonly int _childCanvasDefaultCount;
 
         [Inject] private ModalInfoOkCancelView.Factory _factoryInfoOkCancel;
+        [Inject] private ModalInfoOkView.Factory _factoryInfoOk;
         [Inject] private ModalWaitView.Factory _factoryWait;
 
         private ModalWaitView _modalWaitWindow;
@@ -83,6 +84,35 @@ namespace Libs.OpenUI.ModalWindows
             {
                 DestroyWindow(window.gameObject);
                 handlerCancel?.Invoke();
+            }
+
+            return window;
+        }
+        
+        public UiView InfoOk(string caption, string description, Action handlerClose = null)
+        {
+            var window = _factoryInfoOk.Create();
+            CreateWindow(window);
+
+            window.TextCaption.text = caption;
+            window.TextDescription.text = description;
+
+            window.ButtonOk.OnClickAsObservable()
+                .Subscribe(_ => Close())
+                .AddTo(window);
+
+            window.ButtonCloseBg.OnClickAsObservable()
+                .Subscribe(_ => Close())
+                .AddTo(window);
+
+            window.ButtonClose.OnClickAsObservable()
+                .Subscribe(_ => Close())
+                .AddTo(window);
+
+            void Close()
+            {
+                DestroyWindow(window.gameObject);
+                handlerClose?.Invoke();
             }
 
             return window;
