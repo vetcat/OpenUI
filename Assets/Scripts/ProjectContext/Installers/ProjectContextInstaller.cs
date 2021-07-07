@@ -1,4 +1,5 @@
 using Libs.OpenUI;
+using Libs.OpenUI.Localization;
 using Libs.OpenUI.Signals;
 using UnityEngine;
 using Zenject;
@@ -13,11 +14,13 @@ namespace ProjectContext.Installers
 
             SetProjectSettings();
             SignalBusInstaller.Install(Container);
+
+            BindControllers();
             DeclareProjectSignals();
             
             Container.Bind<AsyncProcessor>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
         }
-
+        
         private void SetProjectSettings()
         {
             Application.targetFrameRate = 60;
@@ -31,6 +34,14 @@ namespace ProjectContext.Installers
 #endif
         }
         
+        private void BindControllers()
+        {
+            Container.BindInitializableExecutionOrder<LocalizationSetter>(-100);
+            Container.BindInterfacesAndSelfTo<LocalizationSetter>().AsSingle();
+            Container.BindInitializableExecutionOrder<LocalizationProvider>(-100);
+            Container.BindInterfacesAndSelfTo<LocalizationProvider>().AsSingle().NonLazy();
+        }
+
         //declaration of signals common to all scenes
         private void DeclareProjectSignals()
         {
