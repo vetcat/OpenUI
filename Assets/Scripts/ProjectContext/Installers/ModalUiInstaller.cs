@@ -27,8 +27,8 @@ namespace ProjectContext.Installers
             //bind modale window
             Container.BindFactory<ModalInfoOkCancelView, ModalInfoOkCancelView.Factory>()
                 .FromComponentInNewPrefab(ModalInfoOkCancelView.gameObject);
-            // Container.BindFactory<ModalWaitView, ModalWaitView.Factory>()
-            //     .FromComponentInNewPrefab(ModalWaitView.gameObject);
+            Container.BindFactory<ModalWaitView, ModalWaitView.Factory>()
+                .FromComponentInNewPrefab(ModalWaitView.gameObject);
         }
     }
 }

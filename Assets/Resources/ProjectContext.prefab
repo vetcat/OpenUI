@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasModalUi: {fileID: 5684621714234561129}
   ModalInfoOkCancelView: {fileID: 4876941770278590105, guid: 5c9f6331537244c8d8bbc6f7d0284fed, type: 3}
-  ModalWaitView: {fileID: 0}
+  ModalWaitView: {fileID: 4320102213026304402, guid: c00768446cd964be8a7475c0f032cedd, type: 3}
 --- !u!1 &5297788879949438985
 GameObject:
   m_ObjectHideFlags: 0
