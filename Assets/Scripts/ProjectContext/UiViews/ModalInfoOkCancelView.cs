@@ -11,6 +11,7 @@ namespace ProjectContext.UiViews
         public Text TextDescription;
         public Button ButtonOk;
         public Button ButtonCancel;
+        public Button ButtonClose;
         [Localization("Cancel")]
         public Text TextCancel;
         [Localization("Ok")]

@@ -39,17 +39,17 @@ namespace Libs.OpenUI.ModalWindows
             {
                 if (_modalWaitWindow != null)
                     return;
-        
+
                 _modalWaitWindow = _factoryWait.Create();
                 _modalWaitWindow.TextCaption.text = caption;
-        
+
                 CreateWindow(_modalWaitWindow);
             }
             else
             {
                 if (_modalWaitWindow == null)
                     return;
-        
+
                 DestroyWindow(_modalWaitWindow.gameObject);
                 _modalWaitWindow = null;
             }
@@ -72,15 +72,22 @@ namespace Libs.OpenUI.ModalWindows
                 .AddTo(window);
 
             window.ButtonCancel.OnClickAsObservable()
-                .Subscribe(_ =>
-                {
-                    DestroyWindow(window.gameObject);
-                    handlerCancel?.Invoke();
-                })
+                .Subscribe(_ => Cancel())
                 .AddTo(window);
+
+            window.ButtonClose.OnClickAsObservable()
+                .Subscribe(_ => Cancel())
+                .AddTo(window);
+
+            void Cancel()
+            {
+                DestroyWindow(window.gameObject);
+                handlerCancel?.Invoke();
+            }
 
             return window;
         }
+
         #endregion
 
         #region base
