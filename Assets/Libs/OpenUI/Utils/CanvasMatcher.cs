@@ -5,7 +5,7 @@ namespace Libs.OpenUI.Utils
 {
     public class CanvasMatcher : MonoBehaviour
     {
-        private float MIN_SCREEN_FACTOR_MATCH = 1.777f; // 2560x1440
+        private float MIN_SCREEN_FACTOR_MATCH = 1.777f; // 1280 x 720
 
         void Start()
         {
@@ -13,7 +13,7 @@ namespace Libs.OpenUI.Utils
 
             if (canvasScaler == null)
             {
-                Debug.LogError("CanvasMatcher component CanvasScaler not found " + gameObject.name);
+                Debug.LogError("[CanvasMatcher] component CanvasScaler not found " + gameObject.name);
                 return;
             }
 

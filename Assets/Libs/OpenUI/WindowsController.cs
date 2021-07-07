@@ -57,6 +57,5 @@ namespace Libs.OpenUI
             
             _heap.Clear();
         }
-
     }
 }
