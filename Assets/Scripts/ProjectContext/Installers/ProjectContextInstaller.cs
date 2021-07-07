@@ -1,8 +1,9 @@
+using Libs.OpenUI;
 using Libs.OpenUI.Signals;
 using UnityEngine;
 using Zenject;
 
-namespace ProjectContext
+namespace ProjectContext.Installers
 {
     public class ProjectContextInstaller : MonoInstaller
     {
@@ -13,6 +14,8 @@ namespace ProjectContext
             SetProjectSettings();
             SignalBusInstaller.Install(Container);
             DeclareProjectSignals();
+            
+            Container.Bind<AsyncProcessor>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
         }
 
         private void SetProjectSettings()

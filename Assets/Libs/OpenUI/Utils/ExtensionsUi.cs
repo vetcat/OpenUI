@@ -6,6 +6,19 @@ namespace Libs.OpenUI.Utils
 {
     public static class ExtensionsUi
     {
+        
+        public static Canvas GetCanvas(string tag)
+        {
+            var canvasGo = GameObject.FindWithTag(tag);
+            if (canvasGo == null)
+            {
+                Debug.LogError($"Canvas {tag} not found");
+                return null;
+            }
+
+            return canvasGo.GetComponent<Canvas>();
+        }
+        
         public static void SetAlpha(this Image image, float alpha)
         {
             var color = image.color;

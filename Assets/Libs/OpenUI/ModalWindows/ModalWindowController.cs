@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
-using Libs.OpenUI.Localization;
 using Libs.OpenUI.UiEffects;
-using ProjectContext.Settings;
 using ProjectContext.UiViews;
 using UniRx;
 using UnityEngine;
@@ -16,10 +14,9 @@ namespace Libs.OpenUI.ModalWindows
         readonly AsyncProcessor _asyncProcessor;
         private readonly SignalBus _signalBus;
         private readonly int _childCanvasDefaultCount;
-        private UiView _applyCloudDataActive = null;
 
         [Inject] private ModalInfoOkCancelView.Factory _factoryInfoOkCancel;
-        [Inject] private ModalWaitView.Factory _factoryWait;
+        //[Inject] private ModalWaitView.Factory _factoryWait;
 
         private ModalWaitView _modalWaitWindow;
 
@@ -36,27 +33,27 @@ namespace Libs.OpenUI.ModalWindows
 
         #region window
 
-        public void ShowWait(bool show, string caption = "")
-        {
-            if (show)
-            {
-                if (_modalWaitWindow != null)
-                    return;
-        
-                _modalWaitWindow = _factoryWait.Create();
-                _modalWaitWindow.TextCaption.text = caption;
-        
-                CreateWindow(_modalWaitWindow);
-            }
-            else
-            {
-                if (_modalWaitWindow == null)
-                    return;
-        
-                DestroyWindow(_modalWaitWindow.gameObject);
-                _modalWaitWindow = null;
-            }
-        }
+        // public void ShowWait(bool show, string caption = "")
+        // {
+        //     if (show)
+        //     {
+        //         if (_modalWaitWindow != null)
+        //             return;
+        //
+        //         _modalWaitWindow = _factoryWait.Create();
+        //         _modalWaitWindow.TextCaption.text = caption;
+        //
+        //         CreateWindow(_modalWaitWindow);
+        //     }
+        //     else
+        //     {
+        //         if (_modalWaitWindow == null)
+        //             return;
+        //
+        //         DestroyWindow(_modalWaitWindow.gameObject);
+        //         _modalWaitWindow = null;
+        //     }
+        // }
 
         public UiView InfoOkCancel(string caption, string description, Action handlerOk, Action handlerCancel)
         {

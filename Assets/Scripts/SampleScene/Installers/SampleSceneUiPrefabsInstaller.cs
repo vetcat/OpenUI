@@ -1,4 +1,5 @@
 using Libs.OpenUI;
+using Libs.OpenUI.Utils;
 using SampleScene.UiViews.Schemes;
 using UnityEngine;
 using Zenject;
@@ -19,7 +20,7 @@ namespace SampleScene.Installers
         
         private void BindCanvas()
         {
-            var canvas = GetCanvas("CanvasUi");
+            var canvas = ExtensionsUi.GetCanvas("CanvasUi");
             if (canvas)
             {
                 BindViews(canvas);
@@ -31,14 +32,14 @@ namespace SampleScene.Installers
 
         private void BindCanvasFx()
         {
-            var canvas = GetCanvas("CanvasFx");
+            var canvas = ExtensionsUi.GetCanvas("CanvasFx");
             if (canvas)
                 BindViewsFx(canvas);
         }
 
         private void BindCanvasDynamic()
         {
-            var canvas = GetCanvas("CanvasDynamic");
+            var canvas = ExtensionsUi.GetCanvas("CanvasDynamic");
             if (canvas)
                 BindDynamicUi(canvas);
         }
@@ -64,18 +65,6 @@ namespace SampleScene.Installers
         {
             Container.BindInterfacesAndSelfTo<UiSchemeTop>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<UiSchemeDown>().AsSingle().NonLazy();
-        }
-
-        private Canvas GetCanvas(string tag)
-        {
-            var canvasGo = GameObject.FindWithTag(tag);
-            if (canvasGo == null)
-            {
-                Debug.LogError($"Canvas {tag} not found");
-                return null;
-            }
-
-            return canvasGo.GetComponent<Canvas>();
         }
     }
 }
