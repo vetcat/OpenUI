@@ -2,11 +2,11 @@ namespace Libs.OpenUI.Signals
 {
     public readonly struct SignalHideAllUi
     {
-        public readonly IUiController UiController;
+        public readonly IUiPresenter UiPresenter;
 
-        public SignalHideAllUi(IUiController uiController)
+        public SignalHideAllUi(IUiPresenter uiPresenter)
         {
-            UiController = uiController;
+            UiPresenter = uiPresenter;
         }
     }
 }

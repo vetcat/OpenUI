@@ -2,7 +2,7 @@ namespace Libs.OpenUI
 {
     public interface IWindowsController
     {
-        void HideAll(IUiController excludeUiController);
+        void HideAll(IUiPresenter excludeUiPresenter);
         void RestoreHidden();
     }
 }

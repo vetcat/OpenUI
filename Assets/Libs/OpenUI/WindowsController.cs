@@ -8,22 +8,22 @@ namespace Libs.OpenUI
 {
     public class WindowsController : IWindowsController, IInitializable, IDisposable
     {
-        private readonly List<IUiController> _uiControllers;
+        private readonly List<IUiPresenter> _uiControllers;
         private readonly SignalBus _signalBus;
-        private readonly List<IUiController> _heap;
+        private readonly List<IUiPresenter> _heap;
         readonly CompositeDisposable _disposable = new CompositeDisposable();
 
-        public WindowsController(List<IUiController> uiControllers, SignalBus signalBus)
+        public WindowsController(List<IUiPresenter> uiControllers, SignalBus signalBus)
         {
             _uiControllers = uiControllers;
             _signalBus = signalBus;
-            _heap = new List<IUiController>(uiControllers.Count);
+            _heap = new List<IUiPresenter>(uiControllers.Count);
         }
         
         public void Initialize()
         {
             _signalBus.GetStream<SignalHideAllUi>()
-                .Subscribe(data => HideAll(data.UiController))
+                .Subscribe(data => HideAll(data.UiPresenter))
                 .AddTo(_disposable);
             
             _signalBus.GetStream<SignalRestoreHiddenUi>()
@@ -36,11 +36,11 @@ namespace Libs.OpenUI
             _disposable?.Dispose();
         }
         
-        public void HideAll(IUiController excludeUiController)
+        public void HideAll(IUiPresenter excludeUiPresenter)
         {
             foreach (var controller in _uiControllers)
             {
-                if (controller.IsShow() && controller != excludeUiController)
+                if (controller.IsShow() && controller != excludeUiPresenter)
                 {
                     _heap.Add(controller);
                     controller.Hide();

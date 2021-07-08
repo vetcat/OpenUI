@@ -1,4 +1,5 @@
 using Libs.OpenUI;
+using SampleScene.UiViews.Presenters;
 
 namespace SampleScene.UiViews.Schemes
 {
@@ -6,9 +7,7 @@ namespace SampleScene.UiViews.Schemes
     {
         public override void Initialize()
         {
-            // AddController<UiTopLeftViewController>();
-            // AddController<UiTopRightViewController>();
-            // AddController<UiPlayerResourcesViewController>();
+            AddPresenter<UiSettingsViewPresenter>();
         }
     }
 }

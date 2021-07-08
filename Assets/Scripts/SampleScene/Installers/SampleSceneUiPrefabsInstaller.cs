@@ -1,6 +1,8 @@
 using Libs.OpenUI;
 using Libs.OpenUI.Utils;
+using SampleScene.UiViews.Presenters;
 using SampleScene.UiViews.Schemes;
+using SampleScene.UiViews.Views;
 using UnityEngine;
 using Zenject;
 
@@ -9,6 +11,8 @@ namespace SampleScene.Installers
     [CreateAssetMenu(fileName = "SampleSceneUiPrefabsInstaller", menuName = "Installers/SampleSceneUiPrefabsInstaller")]
     public class SampleSceneUiPrefabsInstaller : ScriptableObjectInstaller<SampleSceneUiPrefabsInstaller>
     {
+        public UiSettingsView UiSettingsView;
+        
         public override void InstallBindings()
         {
             Debug.Log("[SampleSceneUiPrefabsInstaller] InstallBindings");
@@ -46,19 +50,16 @@ namespace SampleScene.Installers
 
         private void BindViews(Canvas canvas)
         {
-            // Container.BindViewController<UiBackgroundCircleView, UiBackgroundCircleViewController>(
-            //     UiBackgroundCircleView, canvas);
+            Container.BindViewPresenter<UiSettingsView, UiSettingsViewPresenter>(
+                UiSettingsView, canvas);
         }
         
         private void BindViewsFx(Canvas canvas)
         {
-            //Container.BindViewController<UiFxView, UiFxViewController>(UiFxView, canvas);
         }
 
         private void BindDynamicUi(Canvas canvas)
         {
-            // Container.BindViewController<UiBuildingIndicatorView, UiBuildingIndicatorViewController>(
-            //     UiBuildingIndicatorView, canvas);
         }
 
         private void BindSchemes()

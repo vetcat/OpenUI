@@ -8,10 +8,10 @@ using Zenject;
 
 namespace Libs.OpenUI
 {
-    public interface IUiController
+    public interface IUiPresenter
     {
-        IObservable<UiController> OnShow { get; }
-        IObservable<UiController> OnHide { get; }
+        IObservable<UiPresenter> OnShow { get; }
+        IObservable<UiPresenter> OnHide { get; }
         void Show();
         void ShowWithAnimation(Action complete = null);
         void Hide();
@@ -21,7 +21,7 @@ namespace Libs.OpenUI
         UiView GetUiView { get; }
     }
 
-    public abstract class UiController : IInitializable, IDisposable
+    public abstract class UiPresenter : IInitializable, IDisposable
     {
         public virtual void Initialize()
         {
@@ -32,19 +32,19 @@ namespace Libs.OpenUI
         }
     }
 
-    public abstract class UiController<T> : UiController, IUiController
+    public abstract class UiPresenter<T> : UiPresenter, IUiPresenter
         where T : UiView
     {
-        protected UiController()
+        protected UiPresenter()
         {
-            _onShow = new Subject<UiController>();
-            _onHide = new Subject<UiController>();
+            _onShow = new Subject<UiPresenter>();
+            _onHide = new Subject<UiPresenter>();
         }
 
-        public IObservable<UiController> OnShow => _onShow;
-        private readonly Subject<UiController> _onShow;
-        public IObservable<UiController> OnHide => _onHide;
-        private readonly Subject<UiController> _onHide;
+        public IObservable<UiPresenter> OnShow => _onShow;
+        private readonly Subject<UiPresenter> _onShow;
+        public IObservable<UiPresenter> OnHide => _onHide;
+        private readonly Subject<UiPresenter> _onHide;
         
         protected readonly CompositeDisposable Disposables = new CompositeDisposable();
 

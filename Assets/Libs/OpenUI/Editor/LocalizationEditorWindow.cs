@@ -60,6 +60,11 @@ namespace Libs.OpenUI.Editor
             {
                 _fileContent = File.ReadAllText(path);
             }
+
+            if (string.IsNullOrEmpty(_fileContent))
+            {
+                Debug.LogError($"error : selected file is empty, path = {path}");
+            }
         }
 
         private void LoadScv(string scvData)

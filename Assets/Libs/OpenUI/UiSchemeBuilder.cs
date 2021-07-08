@@ -5,97 +5,97 @@ namespace Libs.OpenUI
 {
     public abstract class UiSchemeBuilder : IInitializable
     {
-        private readonly List<IUiController> _controllers = new List<IUiController>();
-        private Dictionary<IUiController, int> _siblingIndexes = new Dictionary<IUiController, int>();
+        private readonly List<IUiPresenter> _presenters = new List<IUiPresenter>();
+        private Dictionary<IUiPresenter, int> _siblingIndexes = new Dictionary<IUiPresenter, int>();
         [Inject] private DiContainer _container;
 
         public virtual void Initialize()
         {
         }
 
-        protected void AddController<TController>() where TController : IUiController
+        protected void AddPresenter<TPresenter>() where TPresenter : IUiPresenter
         {
-            var controller = _container.Resolve<TController>();
-            _controllers.Add(controller);
+            var controller = _container.Resolve<TPresenter>();
+            _presenters.Add(controller);
         }
 
-        public List<IUiController> GetControllers()
+        public List<IUiPresenter> GetPresenters()
         {
-            return _controllers;
+            return _presenters;
         }
 
         public void Show(bool withAnimation = false)
         {
-            foreach (var controller in _controllers)
+            foreach (var presenter in _presenters)
             {
                 if (withAnimation)
-                    controller.ShowWithAnimation();
+                    presenter.ShowWithAnimation();
                 else
-                    controller.Show();
+                    presenter.Show();
             }
         }
 
         public void Hide(bool withAnimation = false)
         {
-            foreach (var controller in _controllers)
+            foreach (var presenter in _presenters)
             {
                 if (withAnimation)
-                    controller.HideWithAnimation();
+                    presenter.HideWithAnimation();
                 else
-                    controller.Hide();
+                    presenter.Hide();
             }
         }
 
         public void Lock()
         {
-            foreach (var controller in _controllers)
-                controller.Lock(true);
+            foreach (var presenter in _presenters)
+                presenter.Lock(true);
         }
 
         public void UnLock()
         {
-            foreach (var controller in _controllers)
-                controller.Lock(false);
+            foreach (var presenter in _presenters)
+                presenter.Lock(false);
         }
 
-        public void UnlockController(UiController unlockController)
+        public void UnlockPresenter(UiPresenter unlockPresenter)
         {
-            var targetController = _controllers.Find(f => f == unlockController);
-            targetController?.Lock(false);
+            var presenter = _presenters.Find(f => f == unlockPresenter);
+            presenter?.Lock(false);
         }
         
-        public void LockController(UiController unlockController)
+        public void LockPresenter(UiPresenter unlockPresenter)
         {
-            var targetController = _controllers.Find(f => f == unlockController);
-            targetController?.Lock(true);
+            var presenter = _presenters.Find(f => f == unlockPresenter);
+            presenter?.Lock(true);
         }
         
         public void SetAsLastSibling()
         {
-            foreach (var controller in _controllers)
+            foreach (var presenter in _presenters)
             {
-                _siblingIndexes[controller] = controller.GetUiView.transform.GetSiblingIndex();
-                controller.GetUiView.transform.SetAsLastSibling();
+                _siblingIndexes[presenter] = presenter.GetUiView.transform.GetSiblingIndex();
+                presenter.GetUiView.transform.SetAsLastSibling();
             }
         }
         
         public void SetAsFirstSibling()
         {
-            foreach (var controller in _controllers)
+            foreach (var presenter in _presenters)
             {
-                _siblingIndexes[controller] = controller.GetUiView.transform.GetSiblingIndex();
-                controller.GetUiView.transform.SetAsFirstSibling();
+                _siblingIndexes[presenter] = presenter.GetUiView.transform.GetSiblingIndex();
+                presenter.GetUiView.transform.SetAsFirstSibling();
             }
         }
 
         public void RestoreSibling()
         {
-            foreach (var controller in _controllers)
+            foreach (var presenter in _presenters)
             {
-                if (_siblingIndexes.ContainsKey(controller))
+                if (_siblingIndexes.ContainsKey(presenter))
                 {
-                    var index = _siblingIndexes[controller];
-                    controller.GetUiView.transform.SetSiblingIndex(index);
+                    var index = _siblingIndexes[presenter];
+                    presenter.GetUiView.transform.SetSiblingIndex(index);
                 }
             }
         }

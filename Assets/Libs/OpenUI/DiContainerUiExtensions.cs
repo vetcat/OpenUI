@@ -5,16 +5,16 @@ namespace Libs.OpenUI
 {
     public static class DiContainerUiExtensions
     {
-        public static void BindViewController<TView, TController>(this DiContainer container, UiView view, Canvas parent) where TView : UiView where TController : UiController
+        public static void BindViewPresenter<TView, TPresenter>(this DiContainer container, UiView view, Canvas parent) where TView : UiView where TPresenter : UiPresenter
         {
             container.BindInterfacesAndSelfTo<TView>().FromComponentInNewPrefab(view).UnderTransform(parent.transform).AsSingle();
-            container.BindController<TController>();
+            container.BindPresenter<TPresenter>();
         }
         
-        public static void BindViewController<TView, TController>(this DiContainer container, UiView view, GameObject parent) where TView : UiView where TController : UiController
+        public static void BindViewPresenter<TView, TPresenter>(this DiContainer container, UiView view, GameObject parent) where TView : UiView where TPresenter : UiPresenter
         {
             container.BindInterfacesAndSelfTo<TView>().FromComponentInNewPrefab(view).UnderTransform(parent.transform).AsSingle();
-            container.BindController<TController>();
+            container.BindPresenter<TPresenter>();
         }
         
         public static void BindView<TView>(this DiContainer container, UiView view, Canvas parent) where TView : UiView
@@ -22,20 +22,20 @@ namespace Libs.OpenUI
             container.BindInterfacesAndSelfTo<TView>().FromComponentInNewPrefab(view).UnderTransform(parent.transform).AsSingle();
         }
 
-        public static void BindViewControllerWithArgument<TView, TController, T>(this DiContainer container, GameObject viewPrefab, Transform parent, T paramArgument) where TView : UiView where TController : UiController
+        public static void BindViewPresenterWithArgument<TView, TPresenter, T>(this DiContainer container, GameObject viewPrefab, Transform parent, T paramArgument) where TView : UiView where TPresenter : UiPresenter
         {
             container.BindInterfacesAndSelfTo<TView>().FromComponentInNewPrefab(viewPrefab).UnderTransform(parent).AsSingle();
-            container.BindControllerWithArgument<TController, T>(paramArgument);
+            container.BindPresenterWithArgument<TPresenter, T>(paramArgument);
         }
 
-        private static void BindController<TController>(this DiContainer container) where TController : UiController
+        private static void BindPresenter<TPresenter>(this DiContainer container) where TPresenter : UiPresenter
         {
-            container.BindInterfacesAndSelfTo<TController>().AsSingle().NonLazy();
+            container.BindInterfacesAndSelfTo<TPresenter>().AsSingle().NonLazy();
         }
 
-        private static void BindControllerWithArgument<TController, T>(this DiContainer container, T paramArgument) where TController : UiController
+        private static void BindPresenterWithArgument<TPresenter, T>(this DiContainer container, T paramArgument) where TPresenter : UiPresenter
         {
-            container.BindInterfacesAndSelfTo<TController>().AsSingle().WithArguments(paramArgument).NonLazy();
+            container.BindInterfacesAndSelfTo<TPresenter>().AsSingle().WithArguments(paramArgument).NonLazy();
         }
     }
 }
