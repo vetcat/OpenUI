@@ -13,6 +13,7 @@ namespace SampleScene.UiViews.Views
         public Toggle ToggleLanguage;
         
         public LanguagesLayout LanguagesLayout;
+        public SettingsLayout SettingsLayout;
 
         [Button]
         private void TestExpandAnimation()
