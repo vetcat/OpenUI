@@ -12,5 +12,7 @@ namespace SampleScene.UiViews.Views
         public Text TextMusic;
         [Localization("TextSound")]
         public Text TextSound;
+        public Text TextSliderMusicValue;
+        public Text TextSliderSoundValue;
     }
 }

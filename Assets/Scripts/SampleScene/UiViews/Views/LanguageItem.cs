@@ -1,4 +1,5 @@
 using Libs.OpenUI;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views
@@ -7,5 +8,6 @@ namespace SampleScene.UiViews.Views
     {
         public Toggle Toggle;
         public Text TextLanguage;
+        [HideInInspector] public SystemLanguage Language;
     }
 }
