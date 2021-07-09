@@ -11,7 +11,7 @@ namespace SampleScene.Installers
     [CreateAssetMenu(fileName = "SampleSceneUiPrefabsInstaller", menuName = "Installers/SampleSceneUiPrefabsInstaller")]
     public class SampleSceneUiPrefabsInstaller : ScriptableObjectInstaller<SampleSceneUiPrefabsInstaller>
     {
-        public UiSettingsView UiSettingsView;
+        public UiTopRightView uiTopRightView;
         
         public override void InstallBindings()
         {
@@ -50,8 +50,8 @@ namespace SampleScene.Installers
 
         private void BindViews(Canvas canvas)
         {
-            Container.BindViewPresenter<UiSettingsView, UiSettingsViewPresenter>(
-                UiSettingsView, canvas);
+            Container.BindViewPresenter<UiTopRightView, UiTopRightViewPresenter>(
+                uiTopRightView, canvas);
         }
         
         private void BindViewsFx(Canvas canvas)

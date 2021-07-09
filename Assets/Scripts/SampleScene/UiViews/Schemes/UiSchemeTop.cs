@@ -7,7 +7,7 @@ namespace SampleScene.UiViews.Schemes
     {
         public override void Initialize()
         {
-            AddPresenter<UiSettingsViewPresenter>();
+            AddPresenter<UiTopRightViewPresenter>();
         }
     }
 }

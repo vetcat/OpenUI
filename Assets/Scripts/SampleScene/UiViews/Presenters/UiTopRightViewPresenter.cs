@@ -3,9 +3,9 @@ using SampleScene.UiViews.Views;
 
 namespace SampleScene.UiViews.Presenters
 {
-    public class UiSettingsViewPresenter : UiPresenter<UiSettingsView>
+    public class UiTopRightViewPresenter : UiPresenter<UiTopRightView>
     {
-        public UiSettingsViewPresenter()
+        public UiTopRightViewPresenter()
         {
         }
 
