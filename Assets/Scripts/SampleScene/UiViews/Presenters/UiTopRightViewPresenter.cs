@@ -15,6 +15,7 @@ namespace SampleScene.UiViews.Presenters
 
         public override void Initialize()
         {
+            base.Initialize();
             View.ButtonSettings.OnClickAsObservable()
                 .Subscribe(_ => _uiSettingsViewPresenter.Open())
                 .AddTo(Disposables);
