@@ -580,6 +580,8 @@ MonoBehaviour:
   TextHeader: {fileID: 3528707351784195629}
   ToggleSettings: {fileID: 3528707351559697903}
   ToggleLanguage: {fileID: 3528707351547219431}
+  TextToggleLanguage: {fileID: 3528707351069345665}
+  TextToggleSettings: {fileID: 3528707351457069379}
   LanguagesLayout: {fileID: 3528707349837462859}
   SettingsLayout: {fileID: 958791610222110140}
 --- !u!1 &1609728100959481251
@@ -1359,8 +1361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 765.05585, y: 0}
+  m_SizeDelta: {x: 1029.8882, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3528707350147285316
 CanvasRenderer:
@@ -1963,8 +1965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125.05588, y: 0}
+  m_SizeDelta: {x: 250.11176, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3528707351130064670
 CanvasRenderer:

@@ -3,5 +3,6 @@
   "TestDescription": "Test description",
   "Settings": "Settings",
   "TextMusic": "MUSUC",
-  "TextSound": "SOUND"
+  "TextSound": "SOUND",
+  "Language": "Language"
 }

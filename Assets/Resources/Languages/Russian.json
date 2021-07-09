@@ -3,5 +3,6 @@
   "TestDescription": "Тестовое описание",
   "Settings": "Настройки",
   "TextMusic": "МУЗЫКА",
-  "TextSound": "ЗВУК"
+  "TextSound": "ЗВУК",
+  "Language": "Язык"
 }

@@ -12,11 +12,10 @@ namespace SampleScene.UiViews.Presenters
     enum EToggleType
     {
         Settings,
-        Profile,
         Language
     }
 
-    public sealed class UiSettingsViewPresenter : UiPresenter<UiSettingsView>
+    public sealed class UiSettingsViewPresenter : UiPresenter<UiSettingsView>, IUiSettingsViewPresenter
     {
         private readonly IGameSettingsProvider _gameSettings;
         private readonly ILocalizationProvider _localization;
@@ -62,6 +61,13 @@ namespace SampleScene.UiViews.Presenters
             //inits
             InitSettings();
             InitLanguagesLayout();
+        }
+        
+        public void Open()
+        {
+            View.transform.SetAsLastSibling();
+            Show();
+            View.FadeIn(View.Body, View.CanvasGroup);
         }
 
         private void SetFilter(EToggleType filterType)
