@@ -1,5 +1,7 @@
 {
   "TestCaption": "Тестовый заголовок",
   "TestDescription": "Тестовое описание",
-  "Settings": "Настройки"
+  "Settings": "Настройки",
+  "TextMusic": "МУЗЫКА",
+  "TextSound": "ЗВУК"
 }

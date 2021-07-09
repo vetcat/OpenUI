@@ -1,5 +1,7 @@
 {
   "TestCaption": "Test caption",
   "TestDescription": "Test description",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "TextMusic": "MUSUC",
+  "TextSound": "SOUND"
 }
