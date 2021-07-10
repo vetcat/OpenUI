@@ -11,10 +11,11 @@ namespace Models.Player
         public ReactiveProperty<int> Level { get; }
         public ReactiveCommand UpdatePlayerReactiveCommand { get; }
 
-        public Player()
+        public Player(IPlayerSetting playerSetting)
         {
             Xp = new ReactiveProperty<int>(0);
-            Health = new ReactiveProperty<int>(100);
+            Health = new ReactiveProperty<int>(playerSetting.MaxHealth);
+            Level = new ReactiveProperty<int>(1);
         }
         
         public void SetXp(int value)

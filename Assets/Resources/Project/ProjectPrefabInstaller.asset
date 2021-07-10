@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d83a35c492844095af729465b3621bb, type: 3}
   m_Name: ProjectPrefabInstaller
   m_EditorClassIdentifier: 
+  _playerSetting: {fileID: 11400000, guid: 29a08da4c9e7344b3a6ae4c41d819e72, type: 2}
+  _iconSettings: {fileID: 11400000, guid: a4cc996c09c06450883663f3ceb42552, type: 2}

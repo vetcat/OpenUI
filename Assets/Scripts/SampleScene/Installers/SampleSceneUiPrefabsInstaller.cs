@@ -12,8 +12,9 @@ namespace SampleScene.Installers
     public class SampleSceneUiPrefabsInstaller : ScriptableObjectInstaller<SampleSceneUiPrefabsInstaller>
     {
         public UiTopRightView UiTopRightView;
+        public UiTopLeftView UiTopLeftView;
         public UiSettingsView UiSettingsView;
-        
+
         public override void InstallBindings()
         {
             Debug.Log("[SampleSceneUiPrefabsInstaller] InstallBindings");
@@ -53,6 +54,8 @@ namespace SampleScene.Installers
         {
             Container.BindViewPresenter<UiTopRightView, UiTopRightViewPresenter>(
                 UiTopRightView, canvas);
+            Container.BindViewPresenter<UiTopLeftView, UiTopLeftViewPresenter>(
+                UiTopLeftView, canvas);
             Container.BindViewPresenter<UiSettingsView, UiSettingsViewPresenter>(
                 UiSettingsView, canvas);
         }
