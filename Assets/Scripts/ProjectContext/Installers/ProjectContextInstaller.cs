@@ -1,6 +1,7 @@
 using Libs.OpenUI;
 using Libs.OpenUI.Localization;
 using Libs.OpenUI.Signals;
+using Models.Player;
 using ProjectContext.Providers;
 using UnityEngine;
 using Zenject;
@@ -18,6 +19,7 @@ namespace ProjectContext.Installers
 
             BindControllers();
             BindProviders();
+            BindModels();
             DeclareProjectSignals();
             
             Container.Bind<AsyncProcessor>().FromNewComponentOnNewGameObject().AsSingle().NonLazy();
@@ -47,6 +49,11 @@ namespace ProjectContext.Installers
         private void BindProviders()
         {
             Container.BindInterfacesAndSelfTo<GameSettingsProvider>().AsSingle().NonLazy();
+        }
+        
+        private void BindModels()
+        {
+            Container.BindInterfacesAndSelfTo<Player>().AsSingle().NonLazy();
         }
 
         //declaration of signals common to all scenes
