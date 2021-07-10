@@ -49,6 +49,7 @@ namespace ProjectContext.Installers
         private void BindProviders()
         {
             Container.BindInterfacesAndSelfTo<GameSettingsProvider>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<TimeProvider>().AsSingle().NonLazy();
         }
         
         private void BindModels()

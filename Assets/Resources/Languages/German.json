@@ -5,5 +5,6 @@
   "TextMusic": "MUSIK",
   "TextSound": "KLANG",
   "Language": "Sprache",
-  "Level": "Niveau :"
+  "Level": "Niveau :",
+  "TimeTemplate": "Zeit : {0}"
 }
