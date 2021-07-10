@@ -9,9 +9,8 @@ namespace SampleScene.UiViews.Views
 {
     public class UiTopLeftView : UiView, ILocalizable
     {
-        public RectTransform Body; 
-        [Localization("PlayerData")]
-        public Text TextPlayerData;
+        public RectTransform Body;
+        public Text TextPlayerName;
 
         public PlayerDataLayout HealthData;
         public PlayerDataLayout XpData;
