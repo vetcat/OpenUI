@@ -11,6 +11,9 @@ namespace SampleScene.UiViews.Views
     {
         public RectTransform Body;
         public Text TextPlayerName;
+        [Localization("Level")]
+        public Text TextLevel;
+        public Text TextLevelValue;
 
         public PlayerDataLayout HealthData;
         public PlayerDataLayout XpData;
