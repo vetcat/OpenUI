@@ -6,5 +6,6 @@
   "TextSound": "SONNER",
   "Language": "Langue",
   "Level": "Niveau :",
-  "TimeTemplate": "Temps : {0}"
+  "TimeTemplate": "Temps : {0}",
+  "ItemsShop": "Boutique d'articles"
 }

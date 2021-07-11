@@ -6,5 +6,6 @@
   "TextSound": "SOUND",
   "Language": "Language",
   "Level": "Level :",
-  "TimeTemplate": "Time : {0}"
+  "TimeTemplate": "Time : {0}",
+  "ItemsShop": "Items Shop"
 }

@@ -14,6 +14,7 @@ namespace SampleScene.Installers
         public UiTopCenterView UiTopCenterView;
         public UiTopRightView UiTopRightView;
         public UiTopLeftView UiTopLeftView;
+        public UiDownLeftView UiDownLeftView;
         public UiSettingsView UiSettingsView;
         
         public override void InstallBindings()
@@ -59,6 +60,8 @@ namespace SampleScene.Installers
                 UiTopRightView, canvas);
             Container.BindViewPresenter<UiTopLeftView, UiTopLeftViewPresenter>(
                 UiTopLeftView, canvas);
+            Container.BindViewPresenter<UiDownLeftView, UiDownLeftViewPresenter>(
+                UiDownLeftView, canvas);
             Container.BindViewPresenter<UiSettingsView, UiSettingsViewPresenter>(
                 UiSettingsView, canvas);
         }

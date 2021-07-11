@@ -6,5 +6,6 @@
   "TextSound": "KLANG",
   "Language": "Sprache",
   "Level": "Niveau :",
-  "TimeTemplate": "Zeit : {0}"
+  "TimeTemplate": "Zeit : {0}",
+  "ItemsShop": "Artikel Shop"
 }

@@ -6,5 +6,6 @@
   "TextSound": "ЗВУК",
   "Language": "Язык",
   "Level": "Уровень :",
-  "TimeTemplate": "Время : {0}"
+  "TimeTemplate": "Время : {0}",
+  "ItemsShop": "Магазин предметов"
 }
