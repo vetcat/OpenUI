@@ -3,6 +3,7 @@ using Libs.OpenUI.Utils;
 using SampleScene.UiViews.Presenters;
 using SampleScene.UiViews.Schemes;
 using SampleScene.UiViews.Views;
+using SampleScene.UiViews.Views.UiItemsShop;
 using UnityEngine;
 using Zenject;
 
@@ -16,16 +17,17 @@ namespace SampleScene.Installers
         public UiTopLeftView UiTopLeftView;
         public UiDownLeftView UiDownLeftView;
         public UiSettingsView UiSettingsView;
-        
+        public UiShopView UiShopView;
+
         public override void InstallBindings()
         {
             Debug.Log("[SampleSceneUiPrefabsInstaller] InstallBindings");
-            
+
             BindCanvas();
             BindCanvasFx();
             BindCanvasDynamic();
         }
-        
+
         private void BindCanvas()
         {
             var canvas = ExtensionsUi.GetCanvas("CanvasUi");
@@ -64,8 +66,10 @@ namespace SampleScene.Installers
                 UiDownLeftView, canvas);
             Container.BindViewPresenter<UiSettingsView, UiSettingsViewPresenter>(
                 UiSettingsView, canvas);
+            Container.BindViewPresenter<UiShopView, UiShopViewPresenter>(
+                UiShopView, canvas);
         }
-        
+
         private void BindViewsFx(Canvas canvas)
         {
         }

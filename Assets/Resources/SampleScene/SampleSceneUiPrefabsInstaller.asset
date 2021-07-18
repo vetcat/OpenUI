@@ -17,3 +17,4 @@ MonoBehaviour:
   UiTopLeftView: {fileID: 8754183757485282366, guid: f58d356569e6a4061a603b5108786873, type: 3}
   UiDownLeftView: {fileID: 613531634987420320, guid: 6c54c2066f7ab4d0aa3e2bbb1301fc55, type: 3}
   UiSettingsView: {fileID: 1609728100694054935, guid: 01e72647561af4c12828511efdf7d9f9, type: 3}
+  UiShopView: {fileID: 5906661862755139009, guid: dbcacb6215f2b44af9f62ad5786887c2, type: 3}
