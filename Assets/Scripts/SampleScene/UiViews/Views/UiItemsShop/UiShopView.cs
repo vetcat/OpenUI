@@ -3,13 +3,14 @@ using Libs.OpenUI;
 using Libs.OpenUI.Localization;
 using Libs.OpenUI.UiEffects;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace SampleScene.UiViews.Views
+namespace SampleScene.UiViews.Views.UiItemsShop
 {
-    public class UiItemsShopView : UiView, ILocalizable
+    public class UiShopView : UiView, ILocalizable
     {
         public RectTransform Body;
+        public CollectionShopGroupItem CollectionShopGroupItem; 
+        public CollectionShopItem CollectionShopItem; 
 
         [Button]
         private void TestExpandAnimation()
