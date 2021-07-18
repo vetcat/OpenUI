@@ -21,3 +21,15 @@ MonoBehaviour:
     Group: 1
     Icon: {fileID: 0}
     Amount: 0
+  - Type: 3
+    Group: 1
+    Icon: {fileID: 0}
+    Amount: 0
+  - Type: 4
+    Group: 2
+    Icon: {fileID: 0}
+    Amount: 0
+  - Type: 5
+    Group: 2
+    Icon: {fileID: 0}
+    Amount: 0

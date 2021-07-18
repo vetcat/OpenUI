@@ -9,8 +9,8 @@ using Zenject;
 
 namespace SampleScene.Installers
 {
-    [CreateAssetMenu(fileName = "SampleSceneUiPrefabsInstaller", menuName = "Installers/SampleSceneUiPrefabsInstaller")]
-    public class SampleSceneUiPrefabsInstaller : ScriptableObjectInstaller<SampleSceneUiPrefabsInstaller>
+    [CreateAssetMenu(fileName = "SampleSceneUiInstaller", menuName = "Installers/SampleSceneUiInstaller")]
+    public class SampleSceneUiInstaller : ScriptableObjectInstaller<SampleSceneUiInstaller>
     {
         public UiTopCenterView UiTopCenterView;
         public UiTopRightView UiTopRightView;
@@ -21,7 +21,7 @@ namespace SampleScene.Installers
 
         public override void InstallBindings()
         {
-            Debug.Log("[SampleSceneUiPrefabsInstaller] InstallBindings");
+            Debug.Log("[SampleSceneUiInstaller] InstallBindings");
 
             BindCanvas();
             BindCanvasFx();

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 235ed1c774e0043e9be9d70382078544, type: 3}
-  m_Name: SampleSceneUiPrefabsInstaller
+  m_Name: SampleSceneUiInstaller
   m_EditorClassIdentifier: 
   UiTopCenterView: {fileID: 8942822898822296383, guid: cdabd5f96ec38452fac5c1182adb4e8a, type: 3}
   UiTopRightView: {fileID: 4873213803127053064, guid: 4528fb958acb84fd8b97fa9bb1f536fd, type: 3}
