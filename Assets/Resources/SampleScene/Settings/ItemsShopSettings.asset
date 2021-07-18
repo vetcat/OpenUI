@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47894872acd422eac51a89a27f530b7, type: 3}
   m_Name: ItemsShopSettings
   m_EditorClassIdentifier: 
-  _items: []
+  _items:
+  - Type: 1
+    Group: 1
+    Icon: {fileID: 0}
+    Amount: 0
+  - Type: 2
+    Group: 1
+    Icon: {fileID: 0}
+    Amount: 0
