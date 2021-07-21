@@ -62,6 +62,7 @@ namespace ProjectContext.Installers
         {
             Container.DeclareSignal<SignalButtonClick>().RunSync();
             Container.DeclareSignal<SignalShowView>().RunSync();
+            Container.DeclareSignal<SignalHideView>().RunSync();
             Container.DeclareSignal<SignalHideAllUi>().RunSync();
             Container.DeclareSignal<SignalRestoreHiddenUi>().RunSync();
         }

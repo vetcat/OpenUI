@@ -82,6 +82,7 @@ namespace Libs.OpenUI
         {
             View.Hide();
             _onHide.OnNext(this);
+            _signalBus.Fire(new SignalHideView(_view));
         }
 
         public bool IsShow()

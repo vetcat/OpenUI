@@ -4,7 +4,6 @@ using Libs.OpenUI.Signals;
 using Libs.OpenUI.UiEffects;
 using SampleScene.UiViews.Views;
 using UniRx;
-using UnityEngine;
 using Zenject;
 
 namespace SampleScene.UiViews.Presenters
@@ -25,14 +24,22 @@ namespace SampleScene.UiViews.Presenters
             base.Initialize();
             View.EnableButtonEffects();
 
-            //reaction to opening other Window from signal
+            //reaction to show and hide other Window from signal (can be used for example for analytics)
             // _signalBus.GetStream<SignalShowView>().Where(data => data.View == _uiShopViewPresenter.GetUiView)
             //     .Subscribe(_ => UiShopViewShow())
             //     .AddTo(Disposables);
+            //
+            // _signalBus.GetStream<SignalHideView>().Where(data => data.View == _uiShopViewPresenter.GetUiView)
+            //     .Subscribe(_ =>  UiShopViewHide())
+            //     .AddTo(Disposables);
 
-            //alternative reaction to opening other Window
+            //alternative reaction to show and hide other Window
             _uiShopViewPresenter.OnShow
                 .Subscribe(_ => UiShopViewShow())
+                .AddTo(Disposables);
+            
+            _uiShopViewPresenter.OnHide
+                .Subscribe(_ => UiShopViewHide())
                 .AddTo(Disposables);
 
             View.ButtonItemsShop
@@ -58,8 +65,12 @@ namespace SampleScene.UiViews.Presenters
 
         private void UiShopViewShow()
         {
-            Debug.LogError("UiShopViewShow");
             HideWithAnimation();
+        }
+        
+        private void UiShopViewHide()
+        {
+            ShowWithAnimation();
         }
 
         private void ButtonItemsShopClick()

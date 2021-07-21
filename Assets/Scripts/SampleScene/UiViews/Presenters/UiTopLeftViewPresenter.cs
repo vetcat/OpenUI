@@ -13,11 +13,14 @@ namespace SampleScene.UiViews.Presenters
     {
         private readonly IPlayerService _playerService;
         private readonly IPlayerSetting _playerSetting;
+        private readonly IUiShopViewPresenter _uiShopViewPresenter;
 
-        public UiTopLeftViewPresenter(IPlayerService playerService, IPlayerSetting playerSetting)
+        public UiTopLeftViewPresenter(IPlayerService playerService, IPlayerSetting playerSetting,
+            IUiShopViewPresenter uiShopViewPresenter)
         {
             _playerService = playerService;
             _playerSetting = playerSetting;
+            _uiShopViewPresenter = uiShopViewPresenter;
         }
 
         public override void Initialize()
@@ -40,6 +43,14 @@ namespace SampleScene.UiViews.Presenters
 
             _playerService.OnLevelUp
                 .Subscribe(LevelUp)
+                .AddTo(Disposables);
+
+            _uiShopViewPresenter.OnShow
+                .Subscribe(_ => HideWithAnimation())
+                .AddTo(Disposables);
+
+            _uiShopViewPresenter.OnHide
+                .Subscribe(_ => ShowWithAnimation())
                 .AddTo(Disposables);
 
             //direct set
@@ -76,12 +87,13 @@ namespace SampleScene.UiViews.Presenters
 
         public override void ShowWithAnimation(Action complete = null)
         {
-            View.ExpandAnimation(View.Body, EAnimationTarget.Down);
+            Show();
+            View.ExpandAnimation(View.Body, EAnimationTarget.Down, complete);
         }
 
         public override void HideWithAnimation(Action complete = null)
         {
-            View.CollapseAnimation(View.Body, EAnimationTarget.Up);
+            View.CollapseAnimation(View.Body, EAnimationTarget.Up, () => { base.HideWithAnimation(complete); });
         }
 
         private void UpdateHealth(int value)

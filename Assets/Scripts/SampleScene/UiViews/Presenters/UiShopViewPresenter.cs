@@ -23,7 +23,7 @@ namespace SampleScene.UiViews.Presenters
 
             View.ButtonClose
                 .OnClickAsObservable()
-                .Subscribe()
+                .Subscribe(_ => HideWithAnimation())
                 .AddTo(Disposables);
         }
 
@@ -35,7 +35,7 @@ namespace SampleScene.UiViews.Presenters
 
         public override void HideWithAnimation(Action complete = null)
         {
-            View.CollapseAnimation(View.Body, EAnimationTarget.Left, ()=>
+            View.CollapseAnimation(View.Body, EAnimationTarget.Left, () =>
             {
                 Hide();
                 complete?.Invoke();
