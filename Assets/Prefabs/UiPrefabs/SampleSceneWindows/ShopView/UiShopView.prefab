@@ -1237,7 +1237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a857ceafad4bf4a75af2c9d8e69d9045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Body: {fileID: 0}
+  Body: {fileID: 5906661863300071798}
+  ButtonClose: {fileID: 392692567515878955}
   CollectionShopGroupItem: {fileID: 5906661862755139011}
   CollectionShopItem: {fileID: 5906661862755139008}
 --- !u!114 &5906661862755139011

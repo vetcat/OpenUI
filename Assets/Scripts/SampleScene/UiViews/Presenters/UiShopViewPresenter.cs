@@ -1,11 +1,13 @@
+using System;
 using Libs.OpenUI;
+using Libs.OpenUI.UiEffects;
 using SampleScene.Models.Shop.Settings;
 using SampleScene.UiViews.Views.UiItemsShop;
-using UnityEngine;
+using UniRx;
 
 namespace SampleScene.UiViews.Presenters
 {
-    public class UiShopViewPresenter : UiPresenter<UiShopView>
+    public class UiShopViewPresenter : UiPresenter<UiShopView>, IUiShopViewPresenter
     {
         private readonly IItemsShopSettings _itemsShopSettings;
 
@@ -18,7 +20,36 @@ namespace SampleScene.UiViews.Presenters
         {
             base.Initialize();
             Hide();
-            
+
+            View.ButtonClose
+                .OnClickAsObservable()
+                .Subscribe()
+                .AddTo(Disposables);
+        }
+
+        public override void ShowWithAnimation(Action complete = null)
+        {
+            Show();
+            View.ExpandAnimation(View.Body, EAnimationTarget.Right, complete);
+        }
+
+        public override void HideWithAnimation(Action complete = null)
+        {
+            View.CollapseAnimation(View.Body, EAnimationTarget.Left, ()=>
+            {
+                Hide();
+                complete?.Invoke();
+            });
+        }
+
+        public void Open()
+        {
+            ShowWithAnimation();
+        }
+
+        public void Close()
+        {
+            HideWithAnimation();
         }
     }
 }
