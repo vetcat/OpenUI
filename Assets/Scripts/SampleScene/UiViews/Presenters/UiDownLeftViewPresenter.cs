@@ -37,25 +37,34 @@ namespace SampleScene.UiViews.Presenters
             _uiShopViewPresenter.OnShow
                 .Subscribe(_ => UiShopViewShow())
                 .AddTo(Disposables);
-            
+
             _uiShopViewPresenter.OnHide
                 .Subscribe(_ => UiShopViewHide())
                 .AddTo(Disposables);
 
             View.ButtonItemsShop
                 .OnClickAsObservable()
-                .Subscribe(_ => ButtonItemsShopClick())
+                .Subscribe(_ =>
+                {
+                    if (View.ButtonItemsShop.enabled)
+                        ButtonItemsShopClick();
+                })
                 .AddTo(Disposables);
         }
 
         public override void ShowWithAnimation(Action complete = null)
         {
             Show();
-            View.ExpandAnimation(View.Body, EAnimationTarget.Up, complete);
+            View.ExpandAnimation(View.Body, EAnimationTarget.Up, () =>
+            {
+                View.ButtonItemsShop.enabled = true;
+                complete?.Invoke();
+            });
         }
 
         public override void HideWithAnimation(Action complete = null)
         {
+            View.ButtonItemsShop.enabled = false;
             View.CollapseAnimation(View.Body, EAnimationTarget.Down, () =>
             {
                 Hide();
@@ -67,7 +76,7 @@ namespace SampleScene.UiViews.Presenters
         {
             HideWithAnimation();
         }
-        
+
         private void UiShopViewHide()
         {
             ShowWithAnimation();
