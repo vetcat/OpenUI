@@ -1,5 +1,7 @@
 using Libs.OpenUI;
 using Libs.OpenUI.Localization;
+using SampleScene.Models.Shop;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views.UiItemsShop
@@ -10,5 +12,6 @@ namespace SampleScene.UiViews.Views.UiItemsShop
         public Image ImageIcon;
         public Text TextName;
         public Text TextAmount;
+        [HideInInspector] public EItemShopType Type;
     }
 }

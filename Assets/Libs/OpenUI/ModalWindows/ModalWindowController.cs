@@ -134,7 +134,6 @@ namespace Libs.OpenUI.ModalWindows
             rect.sizeDelta = Vector2.zero;
             rect.localScale = Vector3.one;
 
-            window.EnableButtonEffects();
             window.AddSignalClick(_signalBus);
 
             var modalView = (UiViewCanvasGroup) window;

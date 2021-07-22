@@ -15,21 +15,41 @@ MonoBehaviour:
   _items:
   - Type: 1
     Group: 1
-    Icon: {fileID: 0}
-    Amount: 0
+    Icon: {fileID: 21300000, guid: ff8692725f1d24e4cbaeb04b48490323, type: 3}
+    Amount: 10
   - Type: 2
     Group: 1
-    Icon: {fileID: 0}
-    Amount: 0
+    Icon: {fileID: 21300000, guid: f74f2fa2ff5fa4e0cb3490378353b1a1, type: 3}
+    Amount: 20
   - Type: 3
     Group: 1
-    Icon: {fileID: 0}
-    Amount: 0
+    Icon: {fileID: 21300000, guid: dedefa62de1984ef0bdbfca1e2efd73e, type: 3}
+    Amount: 30
   - Type: 4
-    Group: 2
-    Icon: {fileID: 0}
-    Amount: 0
+    Group: 1
+    Icon: {fileID: 21300000, guid: 50a371b3f482b4fea9703e1f364f18d6, type: 3}
+    Amount: 40
   - Type: 5
+    Group: 1
+    Icon: {fileID: 21300000, guid: 512b2f3ef7a5d416d98906b41d096f08, type: 3}
+    Amount: 50
+  - Type: 6
+    Group: 1
+    Icon: {fileID: 21300000, guid: 3d5b0315c8c2f4c13aa1779f441db056, type: 3}
+    Amount: 60
+  - Type: 7
+    Group: 1
+    Icon: {fileID: 21300000, guid: a8daad25f26d1493d9d139082d378a54, type: 3}
+    Amount: 70
+  - Type: 8
+    Group: 1
+    Icon: {fileID: 21300000, guid: 8e1f84e4b40b045ec9c854852169b48d, type: 3}
+    Amount: 80
+  - Type: 9
     Group: 2
-    Icon: {fileID: 0}
-    Amount: 0
+    Icon: {fileID: 21300000, guid: 4d7545edf33ed47b8a529280caeaf2c3, type: 3}
+    Amount: 90
+  - Type: 10
+    Group: 2
+    Icon: {fileID: 21300000, guid: bb46d8e3be65846f5b12fe1c9b3019a7, type: 3}
+    Amount: 100

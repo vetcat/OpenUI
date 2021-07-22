@@ -7,5 +7,19 @@
   "Language": "Langue",
   "Level": "Niveau :",
   "TimeTemplate": "Temps : {0}",
-  "ItemsShop": "Boutique d'articles"
+  "ItemsShop": "Boutique d'articles",
+  "Group_1": "Groupe 1",
+  "Group_2": "Groupe 2",
+  "Item_1": "Nom de l'article 1",
+  "Item_2": "Nom de l'article 2",
+  "Item_3": "Nom de l'article 3",
+  "Item_4": "Nom de l'article 4",
+  "Item_5": "Nom de l'article 5",
+  "Item_6": "Nom de l'article 6",
+  "Item_7": "Nom de l'article 7",
+  "Item_8": "Nom de l'article 8",
+  "Item_9": "Nom de l'article 9",
+  "Item_10": "Nom de l'article 10",
+  "ChoiceItemCaption": "Сhoix de l'article",
+  "ChoiceItemDescription": "Le joueur a sélectionné un élément \\n<b><color=#C0FF7F>{0}</color></b>"
 }

@@ -60,11 +60,11 @@ namespace ProjectContext.Installers
         //declaration of signals common to all scenes
         private void DeclareProjectSignals()
         {
-            Container.DeclareSignal<SignalButtonClick>().RunSync();
-            Container.DeclareSignal<SignalShowView>().RunSync();
-            Container.DeclareSignal<SignalHideView>().RunSync();
-            Container.DeclareSignal<SignalHideAllUi>().RunSync();
-            Container.DeclareSignal<SignalRestoreHiddenUi>().RunSync();
+            Container.DeclareSignal<SignalButtonClick>().OptionalSubscriber().RunSync();
+            Container.DeclareSignal<SignalShowView>().OptionalSubscriber().RunSync();
+            Container.DeclareSignal<SignalHideView>().OptionalSubscriber().RunSync();
+            Container.DeclareSignal<SignalHideAllUi>().OptionalSubscriber().RunSync();
+            Container.DeclareSignal<SignalRestoreHiddenUi>().OptionalSubscriber().RunSync();
         }
     }
 }

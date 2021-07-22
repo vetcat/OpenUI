@@ -11,6 +11,9 @@ namespace SampleScene.UiViews.Views.UiItemsShop
     {
         public RectTransform Body;
         public Button ButtonClose;
+        public Text TextItemsType;
+        public ToggleGroup ToggleGroup;
+        public ScrollRect ScrollRect;
         public CollectionShopGroupItem CollectionShopGroupItem; 
         public CollectionShopItem CollectionShopItem; 
 

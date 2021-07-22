@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: IconSettings
   m_EditorClassIdentifier: 
   Clock: {fileID: 21300000, guid: 70ed96d684b8e41e58e2cfc59a3192ad, type: 3}
+  ItemShopGroupSprites:
+  - Group: 1
+    Sprite: {fileID: 21300000, guid: b04db2f6581c54db18f0f82795d37caa, type: 3}
+  - Group: 2
+    Sprite: {fileID: 21300000, guid: 20d7c740c1b2c4732b571a0b0fd8e994, type: 3}

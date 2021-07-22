@@ -7,5 +7,19 @@
   "Language": "Sprache",
   "Level": "Niveau :",
   "TimeTemplate": "Zeit : {0}",
-  "ItemsShop": "Artikel Shop"
+  "ItemsShop": "Artikel Shop",
+  "Group_1": "Gruppe 1",
+  "Group_2": "Gruppe 2",
+  "Item_1": "Artikelname 1",
+  "Item_2": "Artikelname 2",
+  "Item_3": "Artikelname 3",
+  "Item_4": "Artikelname 4",
+  "Item_5": "Artikelname 5",
+  "Item_6": "Artikelname 6",
+  "Item_7": "Artikelname 7",
+  "Item_8": "Artikelname 8",
+  "Item_9": "Artikelname 9",
+  "Item_10": "Artikelname 10",
+  "ChoiceItemCaption": "Artikelauswahl",
+  "ChoiceItemDescription": "Der Spieler hat einen Gegenstand ausgewählt \\n<b><color=#C0FF7F>{0}</color></b>"
 }
