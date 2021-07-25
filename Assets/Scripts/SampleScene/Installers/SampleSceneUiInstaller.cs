@@ -3,6 +3,7 @@ using Libs.OpenUI.Utils;
 using SampleScene.UiViews.Presenters;
 using SampleScene.UiViews.Schemes;
 using SampleScene.UiViews.Views;
+using SampleScene.UiViews.Views.UiHints;
 using SampleScene.UiViews.Views.UiItemsShop;
 using UnityEngine;
 using Zenject;
@@ -18,6 +19,7 @@ namespace SampleScene.Installers
         public UiDownLeftView UiDownLeftView;
         public UiSettingsView UiSettingsView;
         public UiShopView UiShopView;
+        public UiHintsView UiHintsView;
 
         public override void InstallBindings()
         {
@@ -68,6 +70,8 @@ namespace SampleScene.Installers
                 UiSettingsView, canvas);
             Container.BindViewPresenter<UiShopView, UiShopViewPresenter>(
                 UiShopView, canvas);
+            Container.BindViewPresenter<UiHintsView, UiHintsViewPresenter>(
+                UiHintsView, canvas);
         }
 
         private void BindViewsFx(Canvas canvas)

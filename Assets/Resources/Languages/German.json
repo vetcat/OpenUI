@@ -21,5 +21,7 @@
   "Item_9": "Artikelname 9",
   "Item_10": "Artikelname 10",
   "ChoiceItemCaption": "Artikelauswahl",
-  "ChoiceItemDescription": "Der Spieler hat einen Gegenstand ausgewählt \\n<b><color=#C0FF7F>{0}</color></b>"
+  "ChoiceItemDescription": "Der Spieler hat einen Gegenstand ausgewählt \\n<b><color=#C0FF7F>{0}</color></b>",
+  "HintDescription": "Testhinweisbeschreibung, Hinweis kann sehr groß sein",
+  "PressAndHold": "drücken und halten"
 }

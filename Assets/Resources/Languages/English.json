@@ -21,5 +21,7 @@
   "Item_9": "Item name 9",
   "Item_10": "Item name 10",
   "ChoiceItemCaption": "Сhoice of item",
-  "ChoiceItemDescription": "The player selected an item \\n<b><color=#C0FF7F>{0}</color></b>"
+  "ChoiceItemDescription": "The player selected an item \\n<b><color=#C0FF7F>{0}</color></b>",
+  "HintDescription": "Test hint description, hint can be very large",
+  "PressAndHold": "press and hold"
 }

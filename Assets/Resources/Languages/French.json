@@ -21,5 +21,7 @@
   "Item_9": "Nom de l'article 9",
   "Item_10": "Nom de l'article 10",
   "ChoiceItemCaption": "Сhoix de l'article",
-  "ChoiceItemDescription": "Le joueur a sélectionné un élément \\n<b><color=#C0FF7F>{0}</color></b>"
+  "ChoiceItemDescription": "Le joueur a sélectionné un élément \\n<b><color=#C0FF7F>{0}</color></b>",
+  "HintDescription": "Description de l'indice de test, l'indice peut être très volumineux",
+  "PressAndHold": "appuyez et maintenez"
 }

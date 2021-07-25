@@ -21,5 +21,7 @@
   "Item_9": "Название предмета 9",
   "Item_10": "Название предмета 10",
   "ChoiceItemCaption": "Выбор предмета",
-  "ChoiceItemDescription": "Игрок выбрал предмет \\n<b><color=#C0FF7F>{0}</color></b>"
+  "ChoiceItemDescription": "Игрок выбрал предмет \\n<b><color=#C0FF7F>{0}</color></b>",
+  "HintDescription": "Тестовое описание хинта, хинт может быть очень большим",
+  "PressAndHold": "нажать и удерживать"
 }

@@ -170,19 +170,20 @@ namespace Libs.OpenUI.UiEffects
         public static Vector3 GetHintPosition(RectTransform targetRect, EPivotTarget pivotTarget, float scaleFactor)
         {
             var offset = Vector3.zero;
+
             switch (pivotTarget)
             {
                 case EPivotTarget.Left:
-                    offset = Vector3.right * targetRect.rect.width * 0.5f * scaleFactor;
-                    break;
-                case EPivotTarget.Right:
                     offset = Vector3.left * targetRect.rect.width * 0.5f * scaleFactor;
                     break;
+                case EPivotTarget.Right:
+                    offset = Vector3.right * targetRect.rect.width * 0.5f * scaleFactor;
+                    break;
                 case EPivotTarget.Up:
-                    offset = Vector3.down * targetRect.rect.height * 0.5f * scaleFactor;
+                    offset = Vector3.up * targetRect.rect.height * 0.5f * scaleFactor;
                     break;
                 case EPivotTarget.Down:
-                    offset = Vector3.up * targetRect.rect.height * 0.5f * scaleFactor;
+                    offset = Vector3.down * targetRect.rect.height * 0.5f * scaleFactor;
                     break;
                 case EPivotTarget.Center:
                     break;
@@ -190,7 +191,14 @@ namespace Libs.OpenUI.UiEffects
                     throw new ArgumentOutOfRangeException(nameof(pivotTarget), pivotTarget, null);
             }
 
-            return targetRect.transform.position + offset;
+            var pivot = targetRect.pivot;
+
+            var offsetY = Mathf.Lerp(1f, -1f, pivot.y);
+            var offsetX = Mathf.Lerp(1f, -1f, pivot.x);
+            var realCenter = targetRect.position 
+                             + Vector3.up * targetRect.rect.height * 0.5f * offsetY * scaleFactor
+                             + Vector3.right * targetRect.rect.width * 0.5f * offsetX * scaleFactor;
+            return realCenter + offset;
         }
 
         public static void Pulsating(this RectTransform targetRect, int count, Action complete = null)
