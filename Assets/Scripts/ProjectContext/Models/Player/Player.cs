@@ -1,7 +1,7 @@
 using UniRx;
 using UnityEngine;
 
-namespace Models.Player
+namespace ProjectContext.Models.Player
 {
     // Reactive Notification Model
     // https://github.com/neuecc/UniRx#reactiveproperty-reactivecollection

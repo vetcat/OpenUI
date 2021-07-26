@@ -1,6 +1,6 @@
 using System;
 
-namespace Models.Player
+namespace ProjectContext.Models.Player
 {
     public interface IPlayerService
     {

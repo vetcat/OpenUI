@@ -2,7 +2,7 @@ using System;
 using DG.Tweening;
 using Libs.OpenUI;
 using Libs.OpenUI.UiEffects;
-using Models.Player;
+using ProjectContext.Models.Player;
 using SampleScene.UiViews.Views;
 using UniRx;
 using UnityEngine;

@@ -1,7 +1,7 @@
 using Libs.OpenUI;
 using Libs.OpenUI.Localization;
 using Libs.OpenUI.Signals;
-using Models.Player;
+using ProjectContext.Models.Player;
 using ProjectContext.Providers;
 using UnityEngine;
 using Zenject;

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66051f0b2975f4b6686ccf7d11605885, type: 3}
-  m_Name: SampleScenePrefabInstaller
+  m_Name: SampleSceneSettingsInstaller
   m_EditorClassIdentifier: 
   _itemsShopSettings: {fileID: 11400000, guid: 1f6e6f5cea03545529a2382b4e6462b4, type: 2}

@@ -3,7 +3,7 @@ using UniRx;
 using UnityEngine;
 using Zenject;
 
-namespace Models.Player
+namespace ProjectContext.Models.Player
 {
     public readonly struct OnXpUpdateData
     {

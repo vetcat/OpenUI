@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Models.Player
+namespace ProjectContext.Models.Player
 {
     public interface IPlayerSetting
     {

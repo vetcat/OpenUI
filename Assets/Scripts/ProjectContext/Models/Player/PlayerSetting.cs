@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Models.Player
+namespace ProjectContext.Models.Player
 {
     [CreateAssetMenu(menuName = "Settings/PlayerSetting", fileName = "PlayerSetting")]
     public class PlayerSetting : ScriptableObject, IPlayerSetting

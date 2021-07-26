@@ -1,6 +1,6 @@
 using UniRx;
 
-namespace Models.Player
+namespace ProjectContext.Models.Player
 {
     public interface IPlayer
     {

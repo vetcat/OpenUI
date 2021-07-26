@@ -1,12 +1,12 @@
-using Models.Player;
+using ProjectContext.Models.Player;
 using ProjectContext.Settings;
 using UnityEngine;
 using Zenject;
 
 namespace ProjectContext.Installers
 {
-    [CreateAssetMenu(fileName = "ProjectPrefabInstaller", menuName = "Installers/ProjectPrefabInstaller")]
-    public class ProjectPrefabInstaller : ScriptableObjectInstaller<ProjectPrefabInstaller>
+    [CreateAssetMenu(fileName = "ProjectSettingsInstaller", menuName = "Installers/ProjectSettingsInstaller")]
+    public class ProjectSettingsInstaller : ScriptableObjectInstaller<ProjectSettingsInstaller>
     {
         [SerializeField] private PlayerSetting _playerSetting;
         [SerializeField] private IconSettings _iconSettings;
