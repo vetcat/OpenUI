@@ -25,5 +25,10 @@ namespace SampleScene.UiViews.Presenters
             var rectTarget = _coinsRectTransform;
             View.CollectAdvanceAnimation(amount, icon, rectSource, rectTarget);
         }
+        
+        public void ShowSpendingAnimation(int amount, Sprite icon, Vector3 position)
+        {
+            View.SpendingAnimation(amount, icon, position);
+        }
     }
 }

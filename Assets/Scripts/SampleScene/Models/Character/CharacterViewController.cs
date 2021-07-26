@@ -101,14 +101,17 @@ namespace SampleScene.Models.Character
 
         private void SelectCharacter()
         {
-            var rnd = Random.Range(0, 2);
-            if (rnd == 0)
+            switch (Random.Range(0, 3))
             {
-                SimpleCharacterReward();
-            }
-            else
-            {
-                AdvanceCharacterReward();
+                case 0:
+                    SimpleCharacterReward();
+                    break;
+                case 1:
+                    AdvanceCharacterReward();
+                    break;
+                case 2:
+                    SpendingCoins();
+                    break;
             }
         }
 
@@ -123,6 +126,12 @@ namespace SampleScene.Models.Character
             var coinsRewardAmount = Random.Range(10, 100);
             var rectSource = _uiIndicatorItemView.ButtonAction.GetComponent<RectTransform>();
             _playerService.AddCoinsWithAnimation(coinsRewardAmount, rectSource);
+        }
+
+        private void SpendingCoins()
+        {
+            var coinsRewardAmount = Random.Range(10, 100);
+            _playerService.RemoveCoinsWithAnimation(coinsRewardAmount, _characterView.GetRewardPosition);
         }
 
         private void Pause()

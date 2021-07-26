@@ -129,5 +129,18 @@ namespace ProjectContext.Models.Player
             _fxViewPresenter.ShowCollectAdvanceAnimation(amount, icon, rectSource);
             _player.SetCoins(_player.Coins.Value + amount);
         }
+        
+        public void RemoveCoinsWithAnimation(int amount, Vector3 effectPosition,
+            bool convertWorldToScreenPoint = true)
+        {
+            if (convertWorldToScreenPoint)
+            {
+                effectPosition = _cameraProvider.GetScreenPosition(effectPosition);
+            }
+            
+            var icon = _iconSettings.Coin;
+            _fxViewPresenter.ShowSpendingAnimation(amount, icon, effectPosition);
+            _player.SetCoins(_player.Coins.Value - amount);
+        }
     }
 }
