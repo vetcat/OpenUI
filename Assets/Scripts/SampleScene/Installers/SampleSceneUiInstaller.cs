@@ -15,7 +15,7 @@ namespace SampleScene.Installers
     public class SampleSceneUiInstaller : ScriptableObjectInstaller<SampleSceneUiInstaller>
     {
         public UiTopCenterView UiTopCenterView;
-        public UiTopRightView UiTopRightView;
+        public UiDownRightView UiDownRightView;
         public UiTopLeftView UiTopLeftView;
         public UiDownLeftView UiDownLeftView;
         public UiSettingsView UiSettingsView;
@@ -62,8 +62,8 @@ namespace SampleScene.Installers
         {
             Container.BindViewPresenter<UiTopCenterView, UiTopCenterViewPresenter>(
                 UiTopCenterView, canvas);
-            Container.BindViewPresenter<UiTopRightView, UiTopRightViewPresenter>(
-                UiTopRightView, canvas);
+            Container.BindViewPresenter<UiDownRightView, UiDownRightViewPresenter>(
+                UiDownRightView, canvas);
             Container.BindViewPresenter<UiTopLeftView, UiTopLeftViewPresenter>(
                 UiTopLeftView, canvas);
             Container.BindViewPresenter<UiDownLeftView, UiDownLeftViewPresenter>(

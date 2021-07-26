@@ -6,11 +6,11 @@ using UniRx;
 
 namespace SampleScene.UiViews.Presenters
 {
-    public class UiTopRightViewPresenter : UiPresenter<UiTopRightView>
+    public class UiDownRightViewPresenter : UiPresenter<UiDownRightView>
     {
         private readonly IUiSettingsViewPresenter _uiSettingsViewPresenter;
 
-        public UiTopRightViewPresenter(IUiSettingsViewPresenter uiSettingsViewPresenter)
+        public UiDownRightViewPresenter(IUiSettingsViewPresenter uiSettingsViewPresenter)
         {
             _uiSettingsViewPresenter = uiSettingsViewPresenter;
         }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SampleSceneUiInstaller
   m_EditorClassIdentifier: 
   UiTopCenterView: {fileID: 8942822898822296383, guid: cdabd5f96ec38452fac5c1182adb4e8a, type: 3}
-  UiTopRightView: {fileID: 4873213803127053064, guid: 4528fb958acb84fd8b97fa9bb1f536fd, type: 3}
+  UiDownRightView: {fileID: 4873213803127053064, guid: 4528fb958acb84fd8b97fa9bb1f536fd, type: 3}
   UiTopLeftView: {fileID: 8754183757485282366, guid: f58d356569e6a4061a603b5108786873, type: 3}
   UiDownLeftView: {fileID: 613531634987420320, guid: 6c54c2066f7ab4d0aa3e2bbb1301fc55, type: 3}
   UiSettingsView: {fileID: 1609728100694054935, guid: 01e72647561af4c12828511efdf7d9f9, type: 3}
