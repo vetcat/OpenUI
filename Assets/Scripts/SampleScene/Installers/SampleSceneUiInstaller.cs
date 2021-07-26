@@ -3,6 +3,7 @@ using Libs.OpenUI.Utils;
 using SampleScene.UiViews.Presenters;
 using SampleScene.UiViews.Schemes;
 using SampleScene.UiViews.Views;
+using SampleScene.UiViews.Views.UiFx;
 using SampleScene.UiViews.Views.UiHints;
 using SampleScene.UiViews.Views.UiItemsShop;
 using SampleScene.UiViews.Views.UiObjectIndicator;
@@ -22,6 +23,8 @@ namespace SampleScene.Installers
         public UiShopView UiShopView;
         public UiHintsView UiHintsView;
         public UiObjectIndicatorView UiObjectIndicatorView;
+        public UiFxView UiFxView;
+        public UiTopRightView UiTopRightView;
 
         public override void InstallBindings()
         {
@@ -64,6 +67,8 @@ namespace SampleScene.Installers
                 UiTopCenterView, canvas);
             Container.BindViewPresenter<UiDownRightView, UiDownRightViewPresenter>(
                 UiDownRightView, canvas);
+            Container.BindViewPresenter<UiTopRightView, UiTopRightViewPresenter>(
+                UiTopRightView, canvas);
             Container.BindViewPresenter<UiTopLeftView, UiTopLeftViewPresenter>(
                 UiTopLeftView, canvas);
             Container.BindViewPresenter<UiDownLeftView, UiDownLeftViewPresenter>(
@@ -78,6 +83,8 @@ namespace SampleScene.Installers
 
         private void BindViewsFx(Canvas canvas)
         {
+            Container.BindViewPresenter<UiFxView, UiFxViewPresenter>(
+                UiFxView, canvas);
         }
 
         private void BindDynamicUi(Canvas canvas)

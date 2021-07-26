@@ -17,13 +17,13 @@ namespace SampleScene.UiViews.Views
         [Button]
         private void TestExpandAnimation()
         {
-            this.ExpandAnimation(Body, EAnimationTarget.Down);
+            this.ExpandAnimation(Body, EAnimationTarget.Up);
         }
 
         [Button]
         private void TestCollapseAnimation()
         {
-            this.CollapseAnimation(Body, EAnimationTarget.Up);
+            this.CollapseAnimation(Body, EAnimationTarget.Down);
         }
     }
 }

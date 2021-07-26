@@ -10,6 +10,7 @@ namespace ProjectContext.Models.Player
         private readonly IPlayerSetting _playerSetting;
         public ReactiveProperty<int> Health { get; }
         public ReactiveProperty<int> Xp { get; }
+        public ReactiveProperty<int> Coins { get; }
         public ReactiveProperty<int> Level { get; }
         public ReactiveProperty<string> Name { get; }
         
@@ -19,6 +20,7 @@ namespace ProjectContext.Models.Player
         {
             _playerSetting = playerSetting;
             Xp = new ReactiveProperty<int>(0);
+            Coins = new ReactiveProperty<int>(0);
             Health = new ReactiveProperty<int>(playerSetting.MaxHealth);
             Level = new ReactiveProperty<int>(1);
             Name = new ReactiveProperty<string>("Default name");
@@ -28,6 +30,12 @@ namespace ProjectContext.Models.Player
         public void SetXp(int value)
         {
             Xp.Value = value;
+            UpdatePlayerReactiveCommand.Execute();
+        }
+        
+        public void SetCoins(int value)
+        {
+            Coins.Value = value;
             UpdatePlayerReactiveCommand.Execute();
         }
         

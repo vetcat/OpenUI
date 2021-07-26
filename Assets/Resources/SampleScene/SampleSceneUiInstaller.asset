@@ -20,3 +20,5 @@ MonoBehaviour:
   UiShopView: {fileID: 5906661862755139009, guid: dbcacb6215f2b44af9f62ad5786887c2, type: 3}
   UiHintsView: {fileID: 459742032073850057, guid: 3c51233cdb8194bb4b934728ffb88ce9, type: 3}
   UiObjectIndicatorView: {fileID: 9080146399790495284, guid: 1bca589242a4948d0820b503928239b5, type: 3}
+  UiFxView: {fileID: 3717101540657793608, guid: d9ace66a53e0d483e9d8885eb0204012, type: 3}
+  UiTopRightView: {fileID: 8248843902320699029, guid: cb86fd4dd13004a97a33472f10e760e2, type: 3}

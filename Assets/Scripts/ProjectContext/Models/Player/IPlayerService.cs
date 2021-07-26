@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace ProjectContext.Models.Player
 {
@@ -9,5 +10,8 @@ namespace ProjectContext.Models.Player
         IPlayer Player { get; }
         int GetDifferenceXp();
         int GetLevelByXp(out int nextLevelBound);
+
+        void AddCoinsWithAnimation(int amount, Vector3 effectPosition,
+            bool convertWorldToScreenPoint = true);
     }
 }

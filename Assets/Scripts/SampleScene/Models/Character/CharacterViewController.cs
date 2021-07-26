@@ -96,6 +96,17 @@ namespace SampleScene.Models.Character
 
         private void ButtonAction()
         {
+            CharacterReward();
+        }
+
+        private void CharacterReward()
+        {
+            var coinsRewardAmount = Random.Range(10, 100);
+            _playerService.AddCoinsWithAnimation(coinsRewardAmount, _characterView.GetRewardPosition);
+        }
+
+        private void Pause()
+        {
             if (!_characterView.IsPause)
             {
                 DOTween.Kill(_characterView.GetTransform);

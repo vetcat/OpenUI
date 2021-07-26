@@ -1,4 +1,7 @@
 using System;
+using ProjectContext.Settings;
+using SampleScene.Providers;
+using SampleScene.UiViews.Presenters;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -28,15 +31,22 @@ namespace ProjectContext.Models.Player
 
         private readonly IPlayer _player;
         private readonly IPlayerSetting _playerSetting;
+        private readonly ICameraProvider _cameraProvider;
+        private readonly IUiFxViewPresenter _fxViewPresenter;
+        private readonly IconSettings _iconSettings;
 
         private readonly CompositeDisposable _disposable = new CompositeDisposable();
 
-        public PlayerService(IPlayer player, IPlayerSetting playerSetting)
+        public PlayerService(IPlayer player, IPlayerSetting playerSetting, ICameraProvider cameraProvider,
+            IUiFxViewPresenter fxViewPresenter, IconSettings iconSettings)
         {
             _onLevelUp = new Subject<int>();
             _onXpUpdate = new Subject<OnXpUpdateData>();
             _player = player;
             _playerSetting = playerSetting;
+            _cameraProvider = cameraProvider;
+            _fxViewPresenter = fxViewPresenter;
+            _iconSettings = iconSettings;
         }
 
         public void Initialize()
@@ -98,6 +108,19 @@ namespace ProjectContext.Models.Player
             }
 
             return _player.Xp.Value;
+        }
+
+        public void AddCoinsWithAnimation(int amount, Vector3 effectPosition,
+            bool convertWorldToScreenPoint = true)
+        {
+            if (convertWorldToScreenPoint)
+            {
+                effectPosition = _cameraProvider.GetScreenPosition(effectPosition);
+            }
+
+            var icon = _iconSettings.Coin;
+            _fxViewPresenter.ShowCollectSimpleAnimation(amount, icon, effectPosition);
+            _player.SetCoins(_player.Coins.Value + amount);
         }
     }
 }

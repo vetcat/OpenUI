@@ -18,6 +18,7 @@ namespace ProjectContext.Settings
     {
         public Sprite Clock;
         public Sprite Character;
+        public Sprite Coin;
         
         [KeyValue("Group")]
         public List<ItemShopGroupSprite> ItemShopGroupSprites;
