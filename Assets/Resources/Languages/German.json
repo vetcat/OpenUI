@@ -23,5 +23,6 @@
   "ChoiceItemCaption": "Artikelauswahl",
   "ChoiceItemDescription": "Der Spieler hat einen Gegenstand ausgewählt \\n<b><color=#C0FF7F>{0}</color></b>",
   "HintDescription": "Testhinweisbeschreibung, Hinweis kann sehr groß sein",
-  "PressAndHold": "drücken und halten"
+  "PressAndHold": "drücken und halten",
+  "ClickToReward": "Zum Belohnen klicken"
 }

@@ -23,5 +23,6 @@
   "ChoiceItemCaption": "Сhoice of item",
   "ChoiceItemDescription": "The player selected an item \\n<b><color=#C0FF7F>{0}</color></b>",
   "HintDescription": "Test hint description, hint can be very large",
-  "PressAndHold": "press and hold"
+  "PressAndHold": "press and hold",
+  "ClickToReward": "Click to reward"
 }

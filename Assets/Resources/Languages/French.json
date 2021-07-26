@@ -23,5 +23,6 @@
   "ChoiceItemCaption": "Сhoix de l'article",
   "ChoiceItemDescription": "Le joueur a sélectionné un élément \\n<b><color=#C0FF7F>{0}</color></b>",
   "HintDescription": "Description de l'indice de test, l'indice peut être très volumineux",
-  "PressAndHold": "appuyez et maintenez"
+  "PressAndHold": "appuyez et maintenez",
+  "ClickToReward": "Cliquez pour récompenser"
 }

@@ -23,5 +23,6 @@
   "ChoiceItemCaption": "Выбор предмета",
   "ChoiceItemDescription": "Игрок выбрал предмет \\n<b><color=#C0FF7F>{0}</color></b>",
   "HintDescription": "Тестовое описание хинта, хинт может быть очень большим",
-  "PressAndHold": "нажать и удерживать"
+  "PressAndHold": "нажать и удерживать",
+  "ClickToReward": "Нажмите для награды"
 }
