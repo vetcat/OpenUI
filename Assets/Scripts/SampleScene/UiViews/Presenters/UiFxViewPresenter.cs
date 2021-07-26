@@ -19,5 +19,11 @@ namespace SampleScene.UiViews.Presenters
             var rectTarget = _coinsRectTransform;
             View.CollectSimpleAnimation(amount, icon, position, rectTarget);
         }
+
+        public void ShowCollectAdvanceAnimation(int amount, Sprite icon, RectTransform rectSource)
+        {
+            var rectTarget = _coinsRectTransform;
+            View.CollectAdvanceAnimation(amount, icon, rectSource, rectTarget);
+        }
     }
 }

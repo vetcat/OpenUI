@@ -41,7 +41,7 @@ namespace SampleScene.UiViews.Views.UiFx
         [Button]
         private void TestCollectAdvanceAnimation()
         {
-            CollectAdvanceAnimation(50, TestRectTransformSource, TestRectTransformTarget,
+            CollectAdvanceAnimation(50, null, TestRectTransformSource, TestRectTransformTarget,
                 () => { Debug.Log("CollectAnimation complete"); });
         }
 
@@ -86,7 +86,7 @@ namespace SampleScene.UiViews.Views.UiFx
             sequence.OnComplete(() => { complete?.Invoke(); });
         }
 
-        public void CollectAdvanceAnimation(int rewardCount, RectTransform rectTransformFrom,
+        public void CollectAdvanceAnimation(int rewardCount, Sprite icon, RectTransform rectTransformFrom,
             RectTransform rectTransformTo, Action complete = null)
         {
             var sequence = DOTween.Sequence();
@@ -97,7 +97,7 @@ namespace SampleScene.UiViews.Views.UiFx
             {
                 var animatedSequence = DOTween.Sequence();
                 var flyAdvanceAnimation =
-                    AddFlyAdvanceAnimation(i, _poolFxItem, rectTransformFrom, rectTransformTo);
+                    AddFlyAdvanceAnimation(i, icon, _poolFxItem, rectTransformFrom, rectTransformTo);
                 //add more if need ...
                 sequence.Insert(i * AnimationInstanceInterval, flyAdvanceAnimation);
             }
@@ -168,13 +168,15 @@ namespace SampleScene.UiViews.Views.UiFx
         }
 
 
-        private Sequence AddFlyAdvanceAnimation(int i, TemplatePool<UiFxItemView> pool, RectTransform rectTransformFrom,
+        private Sequence AddFlyAdvanceAnimation(int i, Sprite icon, TemplatePool<UiFxItemView> pool, RectTransform rectTransformFrom,
             RectTransform rectTransformTo)
         {
             var sequence = DOTween.Sequence();
 
             var rewardTemplate = pool.GetFirstAvailable();
             PreparePoolObject(rewardTemplate, rectTransformFrom.transform.localPosition);
+            if (icon != null)
+                rewardTemplate.ImageIcon.sprite = icon;
 
             var initialPosition =
                 AnimationUtils.GetInitialGoldenRatioPosition(rectTransformFrom.position, i, InitialPositionRadius);

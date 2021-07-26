@@ -13,5 +13,7 @@ namespace ProjectContext.Models.Player
 
         void AddCoinsWithAnimation(int amount, Vector3 effectPosition,
             bool convertWorldToScreenPoint = true);
+
+        void AddCoinsWithAnimation(int amount, RectTransform rectSource);
     }
 }

@@ -122,5 +122,12 @@ namespace ProjectContext.Models.Player
             _fxViewPresenter.ShowCollectSimpleAnimation(amount, icon, effectPosition);
             _player.SetCoins(_player.Coins.Value + amount);
         }
+        
+        public void AddCoinsWithAnimation(int amount, RectTransform rectSource)
+        {
+            var icon = _iconSettings.Coin;
+            _fxViewPresenter.ShowCollectAdvanceAnimation(amount, icon, rectSource);
+            _player.SetCoins(_player.Coins.Value + amount);
+        }
     }
 }

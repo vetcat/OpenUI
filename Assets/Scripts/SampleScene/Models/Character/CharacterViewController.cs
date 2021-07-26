@@ -53,18 +53,23 @@ namespace SampleScene.Models.Character
         private void CreateCharacter()
         {
             _characterView = _characterFactory.Create();
+            
+            _characterView.OnClick
+                .Subscribe(_ => SelectCharacter())
+                .AddTo(_characterView);
+
             _uiIndicatorItemView =
                 _uiObjectIndicatorViewPresenter.AddCharacterIndicator(_characterView.gameObject,
                     _iconSettings.Character);
-            
+
             _playerService.Player.Health
                 .Subscribe(HealthUpdate)
                 .AddTo(_uiIndicatorItemView);
 
             _uiIndicatorItemView.ButtonAction.OnClickAsObservable()
-                .Subscribe(_ => ButtonAction())
+                .Subscribe(_ => SelectCharacter())
                 .AddTo(_uiIndicatorItemView);
-            
+
             SetTargetPosition(_characterView.GetTransform);
         }
 
@@ -94,15 +99,30 @@ namespace SampleScene.Models.Character
             _uiIndicatorItemView.TextSliderValue.text = value.ToString(CultureInfo.InvariantCulture);
         }
 
-        private void ButtonAction()
+        private void SelectCharacter()
         {
-            CharacterReward();
+            var rnd = Random.Range(0, 2);
+            if (rnd == 0)
+            {
+                SimpleCharacterReward();
+            }
+            else
+            {
+                AdvanceCharacterReward();
+            }
         }
 
-        private void CharacterReward()
+        private void SimpleCharacterReward()
         {
             var coinsRewardAmount = Random.Range(10, 100);
             _playerService.AddCoinsWithAnimation(coinsRewardAmount, _characterView.GetRewardPosition);
+        }
+
+        private void AdvanceCharacterReward()
+        {
+            var coinsRewardAmount = Random.Range(10, 100);
+            var rectSource = _uiIndicatorItemView.ButtonAction.GetComponent<RectTransform>();
+            _playerService.AddCoinsWithAnimation(coinsRewardAmount, rectSource);
         }
 
         private void Pause()
@@ -115,7 +135,7 @@ namespace SampleScene.Models.Character
             {
                 SetTargetPosition(_characterView.GetTransform);
             }
-            
+
             _characterView.Pause(!_characterView.IsPause);
         }
     }
