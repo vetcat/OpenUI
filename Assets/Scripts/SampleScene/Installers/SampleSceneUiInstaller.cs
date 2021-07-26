@@ -5,6 +5,7 @@ using SampleScene.UiViews.Schemes;
 using SampleScene.UiViews.Views;
 using SampleScene.UiViews.Views.UiHints;
 using SampleScene.UiViews.Views.UiItemsShop;
+using SampleScene.UiViews.Views.UiObjectIndicator;
 using UnityEngine;
 using Zenject;
 
@@ -20,6 +21,7 @@ namespace SampleScene.Installers
         public UiSettingsView UiSettingsView;
         public UiShopView UiShopView;
         public UiHintsView UiHintsView;
+        public UiObjectIndicatorView UiObjectIndicatorView;
 
         public override void InstallBindings()
         {
@@ -80,6 +82,8 @@ namespace SampleScene.Installers
 
         private void BindDynamicUi(Canvas canvas)
         {
+            Container.BindViewPresenter<UiObjectIndicatorView, UiObjectIndicatorViewPresenter>(
+                UiObjectIndicatorView, canvas);
         }
 
         private void BindSchemes()

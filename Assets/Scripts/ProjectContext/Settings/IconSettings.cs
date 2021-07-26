@@ -17,6 +17,8 @@ namespace ProjectContext.Settings
     public class IconSettings : ScriptableObject
     {
         public Sprite Clock;
+        public Sprite Character;
+        
         [KeyValue("Group")]
         public List<ItemShopGroupSprite> ItemShopGroupSprites;
 

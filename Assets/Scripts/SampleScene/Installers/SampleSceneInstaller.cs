@@ -1,5 +1,6 @@
 using ProjectContext.Models.Player;
 using SampleScene.Models.Character;
+using SampleScene.Providers;
 using UnityEngine;
 using Zenject;
 
@@ -11,10 +12,16 @@ namespace SampleScene.Installers
         {
             Debug.Log("[SampleSceneInstaller] InstallBindings");
 
+            BindProviders();
             BindServices();
             BindControllers();
         }
 
+        private void BindProviders()
+        {
+            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle().NonLazy();
+        }
+        
         private void BindServices()
         {
             Container.BindInterfacesAndSelfTo<PlayerService>().AsSingle().NonLazy();

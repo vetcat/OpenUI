@@ -5,6 +5,7 @@ namespace SampleScene.Models.Character
 {
     public class CharacterView : MonoBehaviour
     {
+        public bool IsPause { get; private set; }
         [SerializeField]private Transform View;
         private Transform _transform;
 
@@ -21,6 +22,11 @@ namespace SampleScene.Models.Character
 
         public class Factory : PlaceholderFactory<CharacterView>
         {
+        }
+
+        public void Pause(bool value)
+        {
+            IsPause = value;
         }
     }
 }
