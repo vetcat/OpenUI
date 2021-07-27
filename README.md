@@ -19,6 +19,7 @@ List of useful articles:
 - [Zenject documentation](https://github.com/modesttree/Zenject)
 - [UniRx documentation](https://github.com/neuecc/UniRx)
 - [UniRx — Rx для Unity3d](https://habr.com/ru/post/342660/)
+- [Introduction to Rx](http://introtorx.com/)
 ****
 Examples for :
 - reactive models
