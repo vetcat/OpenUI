@@ -1,0 +1,27 @@
+Key,Russian,English,German,French
+TestCaption,Тестовый заголовок,Test caption,Test header,En-tête de test
+TestDescription,Тестовое описание,Test description,Testbeschreibung,Description du test
+Settings,Настройки,Settings,die Einstellungen,Paramètres
+TextMusic,МУЗЫКА,MUSUC,MUSIK,MUSIQUE
+TextSound,ЗВУК,SOUND,KLANG,SONNER
+Language,Язык,Language,Sprache,Langue
+Level,Уровень :,Level :,Niveau :,Niveau :
+TimeTemplate,Время : {0},Time : {0},Zeit : {0},Temps : {0}
+ItemsShop,Магазин предметов,Items Shop,Artikel Shop,Boutique d'articles
+Group_1,Группа 1,Group 1,Gruppe 1,Groupe 1
+Group_2,Группа 2,Group 2,Gruppe 2,Groupe 2
+Item_1,Название предмета 1,Item name 1,Artikelname 1,Nom de l'article 1
+Item_2,Название предмета 2,Item name 2,Artikelname 2,Nom de l'article 2
+Item_3,Название предмета 3,Item name 3,Artikelname 3,Nom de l'article 3
+Item_4,Название предмета 4,Item name 4,Artikelname 4,Nom de l'article 4
+Item_5,Название предмета 5,Item name 5,Artikelname 5,Nom de l'article 5
+Item_6,Название предмета 6,Item name 6,Artikelname 6,Nom de l'article 6
+Item_7,Название предмета 7,Item name 7,Artikelname 7,Nom de l'article 7
+Item_8,Название предмета 8,Item name 8,Artikelname 8,Nom de l'article 8
+Item_9,Название предмета 9,Item name 9,Artikelname 9,Nom de l'article 9
+Item_10,Название предмета 10,Item name 10,Artikelname 10,Nom de l'article 10
+ChoiceItemCaption,Выбор предмета,Сhoice of item,Artikelauswahl,Сhoix de l'article
+ChoiceItemDescription,Игрок выбрал предмет \n<b><color=#C0FF7F>{0}</color></b>,The player selected an item \n<b><color=#C0FF7F>{0}</color></b>,Der Spieler hat einen Gegenstand ausgewählt \n<b><color=#C0FF7F>{0}</color></b>,Le joueur a sélectionné un élément \n<b><color=#C0FF7F>{0}</color></b>
+HintDescription,"Тестовое описание хинта, хинт может быть очень большим","Test hint description, hint can be very large","Testhinweisbeschreibung, Hinweis kann sehr groß sein","Description de l'indice de test, l'indice peut être très volumineux"
+PressAndHold,нажать и удерживать,press and hold,drücken und halten,appuyez et maintenez
+ClickToReward,Нажмите для награды,Click to reward,Zum Belohnen klicken,Cliquez pour récompenser
