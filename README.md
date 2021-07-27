@@ -17,5 +17,7 @@ examples for :
 - simple ui animation (reward, spending)
 - simple hints
 - items list
+- localization
+- unit tests (I do not recommend writing unit tests for View or Presenters often - but there is such an opportunity)
 
 ![OpenUI_1](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/OpenUI_1.jpg "OpenUI_1")
