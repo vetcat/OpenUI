@@ -29,6 +29,14 @@ Examples for :
 - simple hints
 - items list
 - localization
+- pop up msg windows
 - unit tests (I do not recommend writing unit tests for View or Presenters often - but there is such an opportunity)
 
+****
+
 ![OpenUI_1](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/OpenUI_1.jpg "OpenUI_1")
+![Pop up window](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Pop%20up%20window.png "Pop up window")
+![Items](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Items.png "Items")
+![Hint](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Hint.png "Hint")
+![Localization_1](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Localization_1.png "Localization_1")
+![Localization_2](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Localization_2.png "Localization_2")
