@@ -9,6 +9,10 @@ Dependencies (already imported into the project):
 - [Safe Area Helper](https://assetstore.unity.com/packages/tools/gui/safe-area-helper-130488)
 - [EasyButtons](https://github.com/madsbangh/EasyButtons)
 ****
+Unity version :
+- 2019.4.18f1 : [main](https://github.com/vetcat/OpenUI) branch
+- 2020.3.12f1 : [2020.3.12f1](https://github.com/vetcat/OpenUI/tree/2020.3.12f1) branch
+****
 List of useful articles:
 
 - [ Development For Winners](https://grofit.gitbook.io/development-for-winners/)
