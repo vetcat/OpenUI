@@ -8,6 +8,7 @@ Dependencies (already imported into the project):
 - [Dotween](http://dotween.demigiant.com/download.php)
 - [Safe Area Helper](https://assetstore.unity.com/packages/tools/gui/safe-area-helper-130488)
 - [EasyButtons](https://github.com/madsbangh/EasyButtons)
+- [Json.NET](https://www.newtonsoft.com/json) (for version unity3d below 2020)
 ****
 Unity version :
 - 2019.4.18f1 : [main](https://github.com/vetcat/OpenUI) branch
