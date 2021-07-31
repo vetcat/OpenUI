@@ -7,7 +7,6 @@ using ProjectContext.Providers;
 using SampleScene.UiViews.Views;
 using UniRx;
 using UniRx.Triggers;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Presenters
@@ -39,7 +38,7 @@ namespace SampleScene.UiViews.Presenters
             AddHint(View.HintArea, "HintDescription");
 
             OnShow
-                .Subscribe(_ =>
+                .Subscribe(presenter =>
                 {
                     _uiUpdater = Observable.Interval(TimeSpan.FromSeconds(UiConstants.UiUpdateTime))
                         .Subscribe(_ => UpdateLocalTime());
@@ -75,7 +74,7 @@ namespace SampleScene.UiViews.Presenters
         private void AddHint(Image hintArea, string keyLocalization)
         {
             hintArea.OnPointerDownAsObservable()
-                .Subscribe(_ =>
+                .Subscribe(eventData =>
                 {
                     _hintDisposable = Observable.Timer(TimeSpan.FromSeconds(UiConstants.HintPressedTime))
                         .Subscribe(_ =>
