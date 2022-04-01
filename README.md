@@ -53,3 +53,9 @@ Examples for :
 ![Localization_1](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Localization_1.png "Localization_1")
 ![Localization_2](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/Localization_2.png "Localization_2")
 ![UnitTests](https://github.com/vetcat/OpenUI/blob/main/OtherSource/Images/UnitTests.png "UnitTest")
+
+****
+
+used in projects:
+- [Mars Future](https://play.google.com/store/apps/details?id=com.smgame.mars)
+- [Desert Skies - Sandbox Survival](https://play.google.com/store/apps/details?id=com.playdarium.desert.skies.raft.survival.adventure)
