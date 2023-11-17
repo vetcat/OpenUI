@@ -59,3 +59,5 @@ Examples for :
 used in projects:
 - [Mars Future](https://play.google.com/store/apps/details?id=com.smgame.mars)
 - [Desert Skies - Sandbox Survival](https://play.google.com/store/apps/details?id=com.playdarium.desert.skies.raft.survival.adventure)
+- [Crash Heads](https://apps.apple.com/au/app/crash-heads/id1613755546)
+- [King or Fail - Castle Takeover](https://play.google.com/store/apps/details?id=com.playfocus.king)
