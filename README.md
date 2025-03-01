@@ -11,7 +11,7 @@ Dependencies (already imported into the project):
 - [Json.NET](https://www.newtonsoft.com/json) (for version unity3d below 2020)
 ****
 Unity version :
-- 2019.4.18f1 : [main](https://github.com/vetcat/OpenUI) branch
+- 2022.3.39f: [main](https://github.com/vetcat/OpenUI) branch
 - 2020.3.12f1 : [2020.3.12f1](https://github.com/vetcat/OpenUI/tree/2020.3.12f1) branch
 ****
 List of useful articles:
