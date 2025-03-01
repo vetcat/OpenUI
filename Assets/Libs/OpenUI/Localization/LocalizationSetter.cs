@@ -1,20 +1,21 @@
 using System;
 using System.Collections.Generic;
-using System.Reflection;
+using TMPro;
 using UniRx;
-using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using Zenject;
 
 namespace Libs.OpenUI.Localization
 {
     public class LocalizationSetter : ILocalizationSetter, IInitializable, IDisposable
     {
-        private readonly List<LocalizedObject> _localizedObjects = new List<LocalizedObject>();
+        private readonly List<UiView> _localizedObjects = new();
+        private readonly List<UiView> _localizedProjectObjects = new();
 
         private static ILocalizationProvider _localizationProvider;
-        private readonly CompositeDisposable _disposables = new CompositeDisposable();
+        private readonly CompositeDisposable _disposables = new();
+        private readonly List<TMP_FontAsset> _defaultFontAssets = new();
+        private bool _hasChangeDefaultFontAssets;
 
         public LocalizationSetter(ILocalizationProvider localizationProvider)
         {
@@ -24,7 +25,7 @@ namespace Libs.OpenUI.Localization
         public void Initialize()
         {
             SceneManager.sceneUnloaded += scene => Clear();
-
+            
             _localizationProvider.OnChangeLanguage
                 .Subscribe(ChangeLocalization)
                 .AddTo(_disposables);
@@ -35,108 +36,65 @@ namespace Libs.OpenUI.Localization
             _disposables.Clear();
         }
 
-        private void ChangeLocalization(SystemLanguage language)
+        private void ChangeLocalization(string language)
         {
             foreach (var localizedObject in _localizedObjects)
                 ApplyLocalization(localizedObject);
-        }
 
-        public void InitLocalizable(ILocalizable localizable)
-        {
-            var fields = localizable.GetType().GetFields();
-            foreach (var fieldInfo in fields)
-            {
-                var localAttrDefined = Attribute.IsDefined(fieldInfo, typeof(LocalizationAttribute));
-                if (!localAttrDefined) continue;
-
-                if (fieldInfo.FieldType != typeof(Text))
-                    throw new ArgumentException("Localization attribute can be applied only to UI.Text, localizable: " +
-                                                localizable.GetType().Name);
-
-                var label = fieldInfo.GetValue(localizable) as Text;
-                if (label == null)
-                    throw new ArgumentException(
-                        "Localization attribute can be applied only to UI.Text and not null, localizable: " +
-                        localizable.GetType().Name);
-
-                var attr = fieldInfo.GetCustomAttribute<LocalizationAttribute>();
-                var localizedObject = new LocalizedObject(label, attr);
-
+            foreach (var localizedObject in _localizedProjectObjects)
                 ApplyLocalization(localizedObject);
-                _localizedObjects.Add(localizedObject);
-            }
         }
 
-        public void Remove(ILocalizable localizable)
+        public void InitLocalizableProject(UiView localizable)
         {
-            var fields = localizable.GetType().GetFields();
-            foreach (var fieldInfo in fields)
-            {
-                var localAttrDefined = Attribute.IsDefined(fieldInfo, typeof(LocalizationAttribute));
-                if (!localAttrDefined) continue;
-
-                if (fieldInfo.FieldType != typeof(Text))
-                    throw new ArgumentException("Localization attribute can be applied only to UI.Text, localizable: " +
-                                                localizable.GetType().Name);
-
-                var label = fieldInfo.GetValue(localizable) as Text;
-                if (label == null)
-                    throw new ArgumentException(
-                        "Localization attribute can be applied only to UI.Text and not null, localizable: " +
-                        localizable.GetType().Name);
-
-                Remove(label);
-            }
-        }
-
-        private void Remove(Text label)
-        {
-            var localizedObject = _localizedObjects.Find(f => f.Text == label);
-            _localizedObjects.Remove(localizedObject);
-        }
-
-        private void ApplyLocalization(LocalizedObject localizedObject)
-        {
-            if (localizedObject.Text == null)
-            {
-                Debug.LogError("LocalizationSetter ApplyLocalization error localizedObject is null " +
-                               localizedObject.Attribute.Value);
-                _localizedObjects.Remove(localizedObject);
+            if (localizable.LocalizationFields == null || localizable.LocalizationFields.Count == 0)
                 return;
-            }
 
-            var localizedText = _localizationProvider.Get(localizedObject.Attribute.Value, localizedObject.Args);
-            localizedObject.Text.text = localizedText;
+            if (!_localizedProjectObjects.Contains(localizable))
+            {
+                _localizedProjectObjects.Add(localizable);
+                ApplyLocalization(localizable);
+            }
         }
 
-        public string CreateLocalizationPattern(Text text, string key, params object[] args)
+        public void InitLocalizable(UiView localizable)
         {
-            var localizedObject = _localizedObjects.Find(f => f.Text == text);
-            localizedObject.SetArgs(args);
-            return _localizationProvider.Get(key, args);
+            if (localizable.LocalizationFields == null || localizable.LocalizationFields.Count == 0)
+                return;
+
+            if (!_localizedObjects.Contains(localizable))
+            {
+                _localizedObjects.Add(localizable);
+                ApplyLocalization(localizable);
+            }
+        }
+
+        public void Remove(UiView localizable)
+        {
+            if (_localizedObjects.Contains(localizable))
+                _localizedObjects.Remove(localizable);
+
+            if (_localizedProjectObjects.Contains(localizable))
+                _localizedObjects.Remove(localizable);
+        }
+
+        private void ApplyLocalization(UiView localizedObject)
+        {
+            foreach (var item in localizedObject.LocalizationFields)
+            {
+                if (string.IsNullOrEmpty(item.Key))
+                    continue;
+
+                if (item.TextField == null)
+                    continue;
+
+                item.TextField.text = _localizationProvider.Get(item.Key);
+            }
         }
 
         public void Clear()
         {
             _localizedObjects.Clear();
-        }
-
-        private class LocalizedObject
-        {
-            public readonly Text Text;
-            public readonly LocalizationAttribute Attribute;
-            public object[] Args;
-
-            public LocalizedObject(Text text, LocalizationAttribute attribute)
-            {
-                Text = text;
-                Attribute = attribute;
-            }
-
-            public void SetArgs(object[] args)
-            {
-                Args = args;
-            }
         }
     }
 }

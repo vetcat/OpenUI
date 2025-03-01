@@ -37,6 +37,14 @@ namespace UniRx.Triggers
                 if (onDestroy != null) { onDestroy.OnNext(Unit.Default); onDestroy.OnCompleted(); }
             }
         }
+        
+        public void Unsubscribe()
+        {
+            disposablesOnDestroy?.Dispose();
+            disposablesOnDestroy = null;
+            onDestroy?.OnCompleted();
+            onDestroy = null;
+        }
 
         /// <summary>This function is called when the MonoBehaviour will be destroyed.</summary>
         public IObservable<Unit> OnDestroyAsObservable()

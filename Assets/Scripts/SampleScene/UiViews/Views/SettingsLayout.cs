@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views
 {
-    public class SettingsLayout : UiView, ILocalizable
+    public class SettingsLayout : UiView
     {
         public Slider SliderMusicVolume;
         public Slider SliderSoundVolume;

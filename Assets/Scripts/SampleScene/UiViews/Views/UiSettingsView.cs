@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views
 {
-    public class UiSettingsView : UiViewCanvasGroup, ILocalizable
+    public class UiSettingsView : UiViewCanvasGroup
     {
         public Button ButtonClose;
         public Text TextHeader;

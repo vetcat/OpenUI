@@ -6,7 +6,7 @@ namespace Libs.OpenUI.Localization
 {
     public interface ILocalizationProvider
     {
-        IObservable<SystemLanguage> OnChangeLanguage { get; }
+        IObservable<string> OnChangeLanguage { get; }
         string Get(string key, params object[] args);
         bool HasKey(string key);
         SystemLanguage GetCurrentLanguage();

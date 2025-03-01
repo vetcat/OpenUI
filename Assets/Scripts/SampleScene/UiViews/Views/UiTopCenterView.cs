@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views
 {
-    public class UiTopCenterView : UiView, ILocalizable
+    public class UiTopCenterView : UiView
     {
         public RectTransform Body;
         public Image HintArea;

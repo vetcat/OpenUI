@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views.UiItemsShop
 {
-    public class UiShopView : UiView, ILocalizable
+    public class UiShopView : UiView
     {
         public RectTransform Body;
         public Button ButtonClose;

@@ -10,10 +10,10 @@ namespace Libs.OpenUI.Localization
     public class LocalizationProvider : ILocalizationProvider, IInitializable
     {
         public List<SystemLanguage> GetAvailableLanguages { get; private set; }
-        public IObservable<SystemLanguage> OnChangeLanguage => _onChangeLanguage;
-        private readonly Subject<SystemLanguage> _onChangeLanguage;
+        public IObservable<string> OnChangeLanguage => _onChangeLanguage;
+        private readonly Subject<string> _onChangeLanguage;
 
-        private Dictionary<string, string> _languageSet = new Dictionary<string, string>();
+        private Dictionary<string, string> _languageSet = new();
 
         private SystemLanguage _selectedLanguage;
 
@@ -23,7 +23,7 @@ namespace Libs.OpenUI.Localization
 
         public LocalizationProvider()
         {
-            _onChangeLanguage = new Subject<SystemLanguage>();
+            _onChangeLanguage = new Subject<string>();
         }
 
         public void Initialize()
@@ -112,7 +112,7 @@ namespace Libs.OpenUI.Localization
             _selectedLanguage = language;
             SetLanguage(_selectedLanguage);
             SaveSelectedLanguage(_selectedLanguage);
-            _onChangeLanguage.OnNext(language);
+            _onChangeLanguage.OnNext(language.ToString());
         }
 
         public string GetTime(TimeSpan time)

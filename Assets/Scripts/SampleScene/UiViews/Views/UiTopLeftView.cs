@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views
 {
-    public class UiTopLeftView : UiView, ILocalizable
+    public class UiTopLeftView : UiView
     {
         public RectTransform Body;
         public Text TextPlayerName;

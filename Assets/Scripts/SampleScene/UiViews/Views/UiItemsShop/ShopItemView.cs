@@ -1,12 +1,11 @@
 using Libs.OpenUI;
-using Libs.OpenUI.Localization;
 using SampleScene.Models.Shop;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views.UiItemsShop
 {
-    public class ShopItemView : UiView, ILocalizable
+    public class ShopItemView : UiView
     {
         public Button ButtonItem;
         public Image ImageIcon;

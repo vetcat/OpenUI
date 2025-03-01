@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views
 {
-    public class UiDownLeftView : UiView, ILocalizable
+    public class UiDownLeftView : UiView
     {
         public RectTransform Body;
         public Button ButtonItemsShop;

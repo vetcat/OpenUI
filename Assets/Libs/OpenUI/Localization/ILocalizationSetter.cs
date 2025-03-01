@@ -2,8 +2,9 @@ namespace Libs.OpenUI.Localization
 {
     public interface ILocalizationSetter
     {
-        void InitLocalizable(ILocalizable localizable);
-        void Remove(ILocalizable localizable);
+        void InitLocalizableProject(UiView localizable);
+        void InitLocalizable(UiView localizable);
+        void Remove(UiView localizable);
         void Clear();
     }
 }

@@ -32,7 +32,7 @@ namespace SampleScene.UiViews.Presenters
             base.Initialize();
             View.EnableButtonEffects();
             Hide();
-            LocalizableInit(View.SettingsLayout);
+            LocalizableInit();
 
             View.ButtonClose.OnClickAsObservable()
                 .Subscribe(_ => HideWithAnimation())

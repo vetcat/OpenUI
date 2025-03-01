@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace SampleScene.UiViews.Views.UiItemsShop
 {
-    public class ShopGroupItemView : UiView, ILocalizable
+    public class ShopGroupItemView : UiView
     {
         public Toggle Toggle;
         public Image ImageIcon;
